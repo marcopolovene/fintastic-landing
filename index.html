@@ -4,529 +4,189 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Guinea Padre Books &mdash; The Adventures of Laidee &amp; Mills</title>
-  <meta name="description" content="Children&#39;s books by Guinea Padre. The Sun in the Rain and A Fintastic Day at the Aquarium &mdash; heartfelt picture books for ages 3&ndash;8 about emotions, family, and wonder.">
+  <meta name="description" content="Children's books by Guinea Padre. The Sun in the Rain and A Fintastic Day at the Aquarium &mdash; heartfelt picture books for ages 3-8 about emotions, family, and wonder.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fredoka+One&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body { font-family: &#39;Nunito&#39;, sans-serif; color: #FFF9ED; overflow-x: hidden; background: #0f0a1e; }
-
-    /* === PALETTE === */
+    body { font-family: 'Nunito', sans-serif; color: #FFF9ED; overflow-x: hidden; background: #0f0a1e; }
     :root {
-      /* Sun in the Rain palette */
-      --sitr-deep:   #0f0a1e;
-      --sitr-mid:    #1a1035;
-      --sitr-indigo: #2d1b6b;
-      --sitr-gold:   #F5B800;
-      --sitr-amber:  #FF8C00;
-      --sitr-rain:   #7EB8D4;
-      --sitr-rose:   #E87CA0;
-      --sitr-cream:  #FFF8EE;
-      /* Fintastic palette */
-      --fin-deep:    #0B2F45;
-      --fin-mid:     #0d4f6e;
-      --fin-aqua:    #00C9D4;
-      --fin-gold:    #F4C842;
-      --cream:       #FFF9ED;
-      --navy-text:   #0B2F45;
+      --sitr-deep: #0f0a1e; --sitr-mid: #1a1035; --sitr-indigo: #2d1b6b;
+      --sitr-gold: #F5B800; --sitr-amber: #FF8C00; --sitr-rain: #7EB8D4;
+      --sitr-rose: #E87CA0; --sitr-cream: #FFF8EE;
+      --fin-deep: #0B2F45; --fin-mid: #0d4f6e; --fin-aqua: #00C9D4;
+      --fin-gold: #F4C842; --cream: #FFF9ED; --navy-text: #0B2F45;
     }
-
-    /* === NAV === */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
       display: flex; align-items: center; justify-content: space-between;
       padding: 14px 5%;
-      background: rgba(15,10,30,0.88);
-      backdrop-filter: blur(16px);
+      background: rgba(15,10,30,0.88); backdrop-filter: blur(16px);
       border-bottom: 1px solid rgba(245,184,0,0.2);
     }
-    .nav-brand {
-      font-family: &#39;Fredoka One&#39;, cursive;
-      font-size: 1.25rem;
-      color: var(--sitr-gold);
-      text-decoration: none;
-      letter-spacing: 0.3px;
-    }
+    .nav-brand { font-family: 'Fredoka One', cursive; font-size: 1.25rem; color: var(--sitr-gold); text-decoration: none; letter-spacing: 0.3px; }
     .nav-brand span { color: var(--sitr-rain); }
     .nav-links { display: flex; align-items: center; gap: 28px; }
-    .nav-link {
-      color: rgba(255,249,237,0.7);
-      text-decoration: none; font-weight: 700;
-      font-size: 0.9rem; transition: color 0.2s;
-    }
+    .nav-link { color: rgba(255,249,237,0.7); text-decoration: none; font-weight: 700; font-size: 0.9rem; transition: color 0.2s; }
     .nav-link:hover { color: var(--sitr-gold); }
     .nav-cta {
       display: inline-flex; align-items: center; gap: 8px;
       background: linear-gradient(135deg, var(--sitr-gold), var(--sitr-amber));
       color: #1a0a00; font-weight: 900; font-size: 0.88rem;
       padding: 10px 22px; border-radius: 50px; text-decoration: none;
-      box-shadow: 0 4px 20px rgba(245,184,0,0.45);
-      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(245,184,0,0.45); transition: transform 0.2s, box-shadow 0.2s;
     }
     .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(245,184,0,0.65); }
-
-    /* === HERO === */
     .hero {
-      min-height: 100vh;
-      position: relative;
-      display: flex; align-items: center;
-      overflow: hidden;
+      min-height: 100vh; position: relative;
+      display: flex; align-items: center; overflow: hidden;
       background: radial-gradient(ellipse at 55% 35%, #2d1b6b 0%, #1a1035 45%, #0f0a1e 100%);
       padding-top: 80px;
     }
-
-    /* Animated rain drops */
     .rain-wrap { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
     .raindrop {
-      position: absolute;
-      width: 1.5px;
+      position: absolute; width: 1.5px;
       background: linear-gradient(to bottom, transparent, rgba(126,184,212,0.6), transparent);
-      animation: fall linear infinite;
-      border-radius: 2px;
+      animation: fall linear infinite; border-radius: 2px;
     }
     @keyframes fall {
-      0%   { transform: translateY(-80px); opacity: 0; }
-      10%  { opacity: 1; }
-      90%  { opacity: 0.5; }
+      0% { transform: translateY(-80px); opacity: 0; }
+      10% { opacity: 1; } 90% { opacity: 0.5; }
       100% { transform: translateY(110vh); opacity: 0; }
     }
-
-    /* Sun rays */
     .sun-glow {
-      position: absolute;
-      top: -10%;
-      right: -5%;
-      width: 65vw; height: 65vw;
-      background: radial-gradient(ellipse at 60% 40%,
-        rgba(245,184,0,0.22) 0%,
-        rgba(255,140,0,0.10) 35%,
-        transparent 70%);
-      border-radius: 50%;
-      pointer-events: none;
-      animation: pulse-sun 6s ease-in-out infinite;
+      position: absolute; top: -10%; right: -5%; width: 65vw; height: 65vw;
+      background: radial-gradient(ellipse at 60% 40%, rgba(245,184,0,0.22) 0%, rgba(255,140,0,0.10) 35%, transparent 70%);
+      border-radius: 50%; pointer-events: none; animation: pulse-sun 6s ease-in-out infinite;
     }
-    @keyframes pulse-sun {
-      0%,100% { transform: scale(1); opacity: 0.8; }
-      50% { transform: scale(1.07); opacity: 1; }
-    }
-
+    @keyframes pulse-sun { 0%,100% { transform: scale(1); opacity: 0.8; } 50% { transform: scale(1.07); opacity: 1; } }
     .hero-inner {
       position: relative; z-index: 10;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 60px 5%;
-      width: 100%;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 60px; align-items: center;
+      max-width: 1200px; margin: 0 auto; padding: 60px 5%; width: 100%;
     }
-
-    /* NEW RELEASE BADGE */
-    .hero-eyebrow {
-      display: inline-flex; align-items: center; gap: 10px;
-      margin-bottom: 22px;
-    }
+    .hero-eyebrow { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 22px; }
     .hero-badge-new {
       display: inline-block;
       background: linear-gradient(135deg, var(--sitr-gold), var(--sitr-amber));
-      color: #1a0a00;
-      font-size: 0.7rem; font-weight: 900;
-      letter-spacing: 2.5px; text-transform: uppercase;
-      padding: 6px 16px; border-radius: 50px;
+      color: #1a0a00; font-size: 0.7rem; font-weight: 900;
+      letter-spacing: 2.5px; text-transform: uppercase; padding: 6px 16px; border-radius: 50px;
     }
-    .hero-badge-series {
-      font-size: 0.8rem; font-weight: 700;
-      color: var(--sitr-rain);
-      letter-spacing: 1px;
-    }
-
-    .hero-title {
-      font-family: &#39;Fredoka One&#39;, cursive;
-      font-size: clamp(3rem, 7vw, 5.5rem);
-      line-height: 1.0;
-      margin-bottom: 10px;
-    }
-    .hero-title .the { color: rgba(255,249,237,0.6); font-size: 0.55em; display: block; margin-bottom: 4px; }
+    .hero-badge-series { font-size: 0.8rem; font-weight: 700; color: var(--sitr-rain); letter-spacing: 1px; }
+    .hero-title { font-family: 'Fredoka One', cursive; font-size: clamp(3rem, 7vw, 5.5rem); line-height: 1.0; margin-bottom: 10px; }
+    .hero-title .the { color: rgba(255,249,237,0.55); font-size: 0.55em; display: block; margin-bottom: 4px; }
     .hero-title .sun { color: var(--sitr-gold); text-shadow: 0 0 40px rgba(245,184,0,0.6), 0 3px 20px rgba(245,184,0,0.4); }
-    .hero-title .in  { color: rgba(255,249,237,0.55); font-size: 0.75em; }
     .hero-title .rain { color: var(--sitr-rain); text-shadow: 0 0 30px rgba(126,184,212,0.5); }
-
-    .hero-author {
-      font-size: 1rem; color: rgba(255,249,237,0.6);
-      font-weight: 600; letter-spacing: 0.5px;
-      margin-bottom: 26px;
-    }
-
-    .hero-synopsis {
-      font-size: 1.1rem;
-      color: rgba(255,249,237,0.88);
-      line-height: 1.8;
-      margin-bottom: 38px;
-      max-width: 500px;
-    }
+    .hero-author { font-size: 1rem; color: rgba(255,249,237,0.6); font-weight: 600; letter-spacing: 0.5px; margin-bottom: 26px; }
+    .hero-synopsis { font-size: 1.1rem; color: rgba(255,249,237,0.88); line-height: 1.8; margin-bottom: 38px; max-width: 500px; }
     .hero-synopsis strong { color: var(--sitr-gold); }
-
     .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
     .btn-amazon {
       display: inline-flex; align-items: center; gap: 10px;
-      background: linear-gradient(135deg, #FF9900, #e07800);
-      color: white; font-weight: 900; font-size: 1.1rem;
-      padding: 16px 36px; border-radius: 50px; text-decoration: none;
-      box-shadow: 0 6px 30px rgba(255,150,0,0.5);
+      background: linear-gradient(135deg, #FF9900, #e07800); color: white;
+      font-weight: 900; font-size: 1.1rem; padding: 16px 36px; border-radius: 50px;
+      text-decoration: none; box-shadow: 0 6px 30px rgba(255,150,0,0.5);
       transition: transform 0.2s, box-shadow 0.2s;
     }
     .btn-amazon:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(255,150,0,0.7); }
-    .btn-kindle {
-      font-size: 0.82rem; color: rgba(255,249,237,0.45);
-      text-decoration: none; font-weight: 600;
-      border-bottom: 1px solid rgba(255,249,237,0.2);
-      padding-bottom: 1px;
-      transition: color 0.2s;
-    }
-    .btn-kindle:hover { color: rgba(255,249,237,0.75); }
-
-    /* Hero Cover */
+    .btn-kindle { font-size: 0.82rem; color: rgba(255,249,237,0.4); text-decoration: none; font-weight: 600; border-bottom: 1px solid rgba(255,249,237,0.15); padding-bottom: 1px; transition: color 0.2s; }
+    .btn-kindle:hover { color: rgba(255,249,237,0.7); }
     .hero-cover { position: relative; display: flex; justify-content: center; }
     .hero-cover img {
-      width: 100%; max-width: 460px;
-      border-radius: 20px;
-      box-shadow:
-        0 40px 100px rgba(0,0,0,0.7),
-        0 0 80px rgba(245,184,0,0.15),
-        0 0 0 1px rgba(245,184,0,0.1);
+      width: 100%; max-width: 460px; border-radius: 20px;
+      box-shadow: 0 40px 100px rgba(0,0,0,0.7), 0 0 80px rgba(245,184,0,0.15), 0 0 0 1px rgba(245,184,0,0.1);
       animation: float-book 6s ease-in-out infinite;
     }
-    @keyframes float-book {
-      0%,100% { transform: translateY(0) rotate(-0.5deg); }
-      50%      { transform: translateY(-16px) rotate(0.5deg); }
-    }
+    @keyframes float-book { 0%,100% { transform: translateY(0) rotate(-0.5deg); } 50% { transform: translateY(-16px) rotate(0.5deg); } }
     .cover-sun-glow {
-      position: absolute;
-      width: 90%; height: 90%;
-      top: 5%; left: 5%;
+      position: absolute; width: 90%; height: 90%; top: 5%; left: 5%;
       background: radial-gradient(ellipse, rgba(245,184,0,0.18) 0%, transparent 65%);
-      filter: blur(30px);
-      pointer-events: none;
+      filter: blur(30px); pointer-events: none;
     }
     .age-badge {
-      position: absolute;
-      top: -14px; right: -14px;
-      background: var(--sitr-rose);
-      color: white; font-family: &#39;Fredoka One&#39;, cursive;
-      font-size: 0.8rem; padding: 8px 16px;
-      border-radius: 50px;
-      box-shadow: 0 4px 20px rgba(232,124,160,0.5);
-      white-space: nowrap;
+      position: absolute; top: -14px; right: -14px;
+      background: var(--sitr-rose); color: white;
+      font-family: 'Fredoka One', cursive; font-size: 0.8rem;
+      padding: 8px 16px; border-radius: 50px;
+      box-shadow: 0 4px 20px rgba(232,124,160,0.5); white-space: nowrap;
     }
-
-    /* Stars row */
-    .hero-social {
-      display: flex; align-items: center; gap: 12px;
-      margin-top: 26px; flex-wrap: wrap;
-    }
+    .hero-social { display: flex; align-items: center; gap: 12px; margin-top: 26px; flex-wrap: wrap; }
     .star-row { color: var(--sitr-gold); font-size: 1.05rem; letter-spacing: 2px; }
-    .star-label { font-size: 0.88rem; color: rgba(255,249,237,0.55); }
-
-    /* === WAVE === */
+    .star-label { font-size: 0.88rem; color: rgba(255,249,237,0.5); }
     .wave { width: 100%; overflow: hidden; line-height: 0; display: block; }
     .wave svg { display: block; width: 100%; }
-
-    /* === SITR INTERIOR GALLERY === */
-    .sitr-gallery-section {
-      background: linear-gradient(180deg, var(--sitr-mid) 0%, var(--sitr-deep) 100%);
-      padding: 80px 5%;
-    }
-    .section-label {
-      display: inline-block;
-      font-size: 0.72rem; font-weight: 800;
-      letter-spacing: 3px; text-transform: uppercase;
-      margin-bottom: 14px;
-    }
+    section { padding: 80px 5%; }
+    .section-label { display: inline-block; font-size: 0.72rem; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 14px; }
     .section-label.gold { color: var(--sitr-gold); }
     .section-label.aqua { color: var(--fin-aqua); }
-    .section-title {
-      font-family: &#39;Fredoka One&#39;, cursive;
-      font-size: clamp(2rem, 4vw, 3rem);
-      line-height: 1.15;
-      margin-bottom: 16px;
-    }
-    .section-desc {
-      font-size: 1.05rem;
-      color: rgba(255,249,237,0.72);
-      line-height: 1.85;
-      max-width: 640px;
-    }
-
-    .sitr-story-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-    .sitr-pages {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-    .sitr-pages img {
-      width: 100%; border-radius: 14px;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
-      transition: transform 0.3s, box-shadow 0.3s;
-      cursor: pointer;
-    }
+    .section-title { font-family: 'Fredoka One', cursive; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.15; margin-bottom: 16px; }
+    .section-desc { font-size: 1.05rem; color: rgba(255,249,237,0.72); line-height: 1.85; max-width: 640px; }
+    .sitr-gallery-section { background: linear-gradient(180deg, var(--sitr-mid) 0%, var(--sitr-deep) 100%); padding: 80px 5%; }
+    .sitr-story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; max-width: 1100px; margin: 0 auto; }
+    .sitr-pages { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .sitr-pages img { width: 100%; border-radius: 14px; box-shadow: 0 8px 32px rgba(0,0,0,0.4); transition: transform 0.3s, box-shadow 0.3s; cursor: pointer; }
     .sitr-pages img:hover { transform: scale(1.04); box-shadow: 0 16px 48px rgba(245,184,0,0.2); }
     .sitr-pages img:first-child { grid-column: span 2; max-height: 280px; object-fit: cover; object-position: center; }
     .sitr-pills { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
-    .pill {
-      display: inline-flex; align-items: center; gap: 6px;
-      background: rgba(245,184,0,0.1);
-      border: 1.5px solid rgba(245,184,0,0.25);
-      color: var(--sitr-gold);
-      font-size: 0.83rem; font-weight: 700;
-      padding: 7px 16px; border-radius: 50px;
-    }
-    .pill.rain {
-      background: rgba(126,184,212,0.1);
-      border-color: rgba(126,184,212,0.25);
-      color: var(--sitr-rain);
-    }
-
-    /* === SITR GALLERY STRIP === */
-    .gallery-strip {
-      background: var(--sitr-deep);
-      padding: 60px 5%;
-    }
-    .gallery-strip-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 12px;
-      max-width: 1200px;
-      margin: 44px auto 0;
-    }
-    .strip-item {
-      border-radius: 14px; overflow: hidden;
-      cursor: pointer;
-      aspect-ratio: 4/5;
-      position: relative;
-    }
-    .strip-item img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      transition: transform 0.4s;
-    }
+    .pill { display: inline-flex; align-items: center; gap: 6px; background: rgba(245,184,0,0.1); border: 1.5px solid rgba(245,184,0,0.25); color: var(--sitr-gold); font-size: 0.83rem; font-weight: 700; padding: 7px 16px; border-radius: 50px; }
+    .pill.rain { background: rgba(126,184,212,0.1); border-color: rgba(126,184,212,0.25); color: var(--sitr-rain); }
+    .gallery-strip { background: var(--sitr-deep); padding: 60px 5%; }
+    .gallery-strip-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; max-width: 1200px; margin: 44px auto 0; }
+    .strip-item { border-radius: 14px; overflow: hidden; cursor: pointer; aspect-ratio: 4/5; position: relative; }
+    .strip-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
     .strip-item:hover img { transform: scale(1.08); }
-    .strip-item::after {
-      content: &#39;&#39;;
-      position: absolute; inset: 0;
-      background: linear-gradient(to top, rgba(15,10,30,0.5) 0%, transparent 50%);
-      pointer-events: none;
-    }
+    .strip-item::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(15,10,30,0.5) 0%, transparent 50%); pointer-events: none; }
     .strip-item.wide { grid-column: span 2; aspect-ratio: 8/5; }
-
-    /* === SITR BUY CTA === */
-    .sitr-cta {
-      background: radial-gradient(ellipse at 50% 60%, rgba(45,27,107,0.8) 0%, var(--sitr-deep) 70%);
-      text-align: center;
-      padding: 90px 5%;
-      position: relative;
-      overflow: hidden;
-    }
-    .sitr-cta::before {
-      content: &#39;&#39;;
-      position: absolute;
-      top: -40%;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 600px; height: 600px;
-      background: radial-gradient(ellipse, rgba(245,184,0,0.12) 0%, transparent 65%);
-      pointer-events: none;
-    }
+    .sitr-cta { background: radial-gradient(ellipse at 50% 60%, rgba(45,27,107,0.8) 0%, var(--sitr-deep) 70%); text-align: center; padding: 90px 5%; position: relative; overflow: hidden; }
+    .sitr-cta::before { content: ''; position: absolute; top: -40%; left: 50%; transform: translateX(-50%); width: 600px; height: 600px; background: radial-gradient(ellipse, rgba(245,184,0,0.12) 0%, transparent 65%); pointer-events: none; }
     .sitr-cta-inner { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
-    .sitr-cta-title {
-      font-family: &#39;Fredoka One&#39;, cursive;
-      font-size: clamp(2rem, 4.5vw, 3.2rem);
-      color: var(--sitr-gold);
-      line-height: 1.15;
-      margin-bottom: 18px;
-    }
-    .sitr-cta-desc {
-      font-size: 1.05rem;
-      color: rgba(255,249,237,0.72);
-      line-height: 1.8;
-      margin-bottom: 40px;
-    }
+    .sitr-cta-title { font-family: 'Fredoka One', cursive; font-size: clamp(2rem, 4.5vw, 3.2rem); color: var(--sitr-gold); line-height: 1.15; margin-bottom: 18px; }
+    .sitr-cta-desc { font-size: 1.05rem; color: rgba(255,249,237,0.72); line-height: 1.8; margin-bottom: 40px; }
     .sitr-cta-btns { display: flex; flex-direction: column; align-items: center; gap: 14px; }
-    .btn-sitr-main {
-      display: inline-flex; align-items: center; gap: 14px;
-      background: linear-gradient(135deg, #FF9900, #e07800);
-      color: white; font-weight: 900; font-size: 1.25rem;
-      padding: 20px 52px; border-radius: 50px; text-decoration: none;
-      box-shadow: 0 8px 40px rgba(255,150,0,0.55);
-      transition: transform 0.25s, box-shadow 0.25s;
-    }
+    .btn-sitr-main { display: inline-flex; align-items: center; gap: 14px; background: linear-gradient(135deg, #FF9900, #e07800); color: white; font-weight: 900; font-size: 1.25rem; padding: 20px 52px; border-radius: 50px; text-decoration: none; box-shadow: 0 8px 40px rgba(255,150,0,0.55); transition: transform 0.25s, box-shadow 0.25s; }
     .btn-sitr-main:hover { transform: translateY(-4px); box-shadow: 0 16px 54px rgba(255,150,0,0.75); }
-    .sitr-trust {
-      display: flex; align-items: center; justify-content: center;
-      gap: 24px; margin-top: 36px; flex-wrap: wrap;
-    }
+    .sitr-trust { display: flex; align-items: center; justify-content: center; gap: 24px; margin-top: 36px; flex-wrap: wrap; }
     .trust-item { display: flex; align-items: center; gap: 8px; font-size: 0.83rem; color: rgba(255,249,237,0.5); }
-
-    /* === DIVIDER === */
-    .books-divider {
-      background: var(--cream);
-      text-align: center;
-      padding: 56px 5%;
-    }
-    .divider-label {
-      font-family: &#39;Fredoka One&#39;, cursive;
-      font-size: clamp(1.5rem, 3vw, 2rem);
-      color: var(--fin-mid);
-      margin-bottom: 8px;
-    }
-    .divider-sub {
-      font-size: 0.95rem;
-      color: rgba(11,47,69,0.55);
-      font-weight: 600;
-    }
-
-    /* === FINTASTIC SECTION === */
-    .fintastic-section {
-      background: radial-gradient(ellipse at 40% 50%, #1a7fa0 0%, #0d4f6e 45%, #0B2F45 100%);
-      padding: 100px 5%;
-      position: relative;
-      overflow: hidden;
-    }
-    /* Bubbles BG */
-    .fintastic-section::before {
-      content: &#39;&#39;;
-      position: absolute; inset: 0;
-      background-image:
-        radial-gradient(circle at 20% 80%, rgba(0,201,212,0.08) 0%, transparent 40%),
-        radial-gradient(circle at 80% 20%, rgba(0,201,212,0.06) 0%, transparent 40%);
-      pointer-events: none;
-    }
-    .fintastic-inner {
-      position: relative; z-index: 1;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
+    .books-divider { background: var(--cream); text-align: center; padding: 56px 5%; }
+    .divider-label { font-family: 'Fredoka One', cursive; font-size: clamp(1.5rem, 3vw, 2rem); color: var(--fin-mid); margin-bottom: 8px; }
+    .divider-sub { font-size: 0.95rem; color: rgba(11,47,69,0.55); font-weight: 600; }
+    .fintastic-section { background: radial-gradient(ellipse at 40% 50%, #1a7fa0 0%, #0d4f6e 45%, #0B2F45 100%); padding: 100px 5%; position: relative; overflow: hidden; }
+    .fintastic-section::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(circle at 20% 80%, rgba(0,201,212,0.08) 0%, transparent 40%), radial-gradient(circle at 80% 20%, rgba(0,201,212,0.06) 0%, transparent 40%); pointer-events: none; }
+    .fintastic-inner { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; max-width: 1100px; margin: 0 auto; }
     .fin-cover { position: relative; display: flex; justify-content: center; }
-    .fin-cover img {
-      width: 100%; max-width: 400px;
-      border-radius: 18px;
-      box-shadow:
-        0 30px 80px rgba(0,0,0,0.55),
-        0 0 60px rgba(0,201,212,0.15);
-      animation: float-fin 5s ease-in-out infinite;
-    }
-    @keyframes float-fin {
-      0%,100% { transform: translateY(0) rotate(0.5deg); }
-      50% { transform: translateY(-12px) rotate(-0.5deg); }
-    }
-    .fin-glow {
-      position: absolute; width: 80%; height: 80%; top: 10%; left: 10%;
-      background: radial-gradient(ellipse, rgba(0,201,212,0.2) 0%, transparent 70%);
-      filter: blur(36px); pointer-events: none;
-    }
-    .fin-text .section-title { color: var(--fin-gold); }
-    .fin-synopsis {
-      font-size: 1.05rem;
-      color: rgba(255,249,237,0.85);
-      line-height: 1.8;
-      margin-bottom: 32px;
-      max-width: 480px;
-    }
+    .fin-cover img { width: 100%; max-width: 400px; border-radius: 18px; box-shadow: 0 30px 80px rgba(0,0,0,0.55), 0 0 60px rgba(0,201,212,0.15); animation: float-fin 5s ease-in-out infinite; }
+    @keyframes float-fin { 0%,100% { transform: translateY(0) rotate(0.5deg); } 50% { transform: translateY(-12px) rotate(-0.5deg); } }
+    .fin-glow { position: absolute; width: 80%; height: 80%; top: 10%; left: 10%; background: radial-gradient(ellipse, rgba(0,201,212,0.2) 0%, transparent 70%); filter: blur(36px); pointer-events: none; }
+    .fin-synopsis { font-size: 1.05rem; color: rgba(255,249,237,0.85); line-height: 1.8; margin-bottom: 32px; max-width: 480px; }
     .fin-synopsis strong { color: var(--fin-gold); }
-    .btn-fin {
-      display: inline-flex; align-items: center; gap: 12px;
-      background: linear-gradient(135deg, var(--fin-aqua), #0099aa);
-      color: white; font-weight: 900; font-size: 1.1rem;
-      padding: 16px 36px; border-radius: 50px; text-decoration: none;
-      box-shadow: 0 6px 30px rgba(0,201,212,0.4);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
+    .btn-fin { display: inline-flex; align-items: center; gap: 12px; background: linear-gradient(135deg, var(--fin-aqua), #0099aa); color: white; font-weight: 900; font-size: 1.1rem; padding: 16px 36px; border-radius: 50px; text-decoration: none; box-shadow: 0 6px 30px rgba(0,201,212,0.4); transition: transform 0.2s, box-shadow 0.2s; }
     .btn-fin:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(0,201,212,0.6); }
     .fin-pills { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 32px; }
-    .pill-fin {
-      display: inline-flex; align-items: center; gap: 6px;
-      background: rgba(0,201,212,0.1);
-      border: 1.5px solid rgba(0,201,212,0.25);
-      color: var(--fin-aqua);
-      font-size: 0.83rem; font-weight: 700;
-      padding: 7px 16px; border-radius: 50px;
-    }
-
-    /* === AUTHOR === */
-    .author-section {
-      background: #040810;
-      text-align: center;
-      padding: 90px 5%;
-    }
+    .pill-fin { display: inline-flex; align-items: center; gap: 6px; background: rgba(0,201,212,0.1); border: 1.5px solid rgba(0,201,212,0.25); color: var(--fin-aqua); font-size: 0.83rem; font-weight: 700; padding: 7px 16px; border-radius: 50px; }
+    .author-section { background: #040810; text-align: center; padding: 90px 5%; }
     .author-inner { max-width: 700px; margin: 0 auto; }
-    .author-avatar {
-      width: 110px; height: 110px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--sitr-indigo), var(--sitr-gold));
-      display: flex; align-items: center; justify-content: center;
-      font-size: 2.8rem;
-      margin: 0 auto 24px;
-      border: 3px solid var(--sitr-gold);
-      box-shadow: 0 0 40px rgba(245,184,0,0.2);
-    }
-    .author-name { font-family: &#39;Fredoka One&#39;, cursive; font-size: 1.8rem; color: var(--sitr-gold); margin-bottom: 6px; }
+    .author-avatar { width: 110px; height: 110px; border-radius: 50%; background: linear-gradient(135deg, var(--sitr-indigo), var(--sitr-gold)); display: flex; align-items: center; justify-content: center; font-size: 2.8rem; margin: 0 auto 24px; border: 3px solid var(--sitr-gold); box-shadow: 0 0 40px rgba(245,184,0,0.2); }
+    .author-name { font-family: 'Fredoka One', cursive; font-size: 1.8rem; color: var(--sitr-gold); margin-bottom: 6px; }
     .author-role { font-size: 0.9rem; color: var(--sitr-rain); font-weight: 700; margin-bottom: 22px; }
     .author-bio { font-size: 1rem; color: rgba(255,249,237,0.68); line-height: 1.85; }
     .author-bio em { color: rgba(255,249,237,0.85); }
-    .books-mini {
-      display: flex; gap: 20px; justify-content: center;
-      margin-top: 44px; flex-wrap: wrap;
-    }
-    .book-mini {
-      background: rgba(255,255,255,0.05);
-      border: 1.5px solid rgba(255,255,255,0.1);
-      border-radius: 16px; padding: 16px 24px;
-      text-decoration: none; color: inherit;
-      font-size: 0.88rem; font-weight: 700;
-      transition: border-color 0.2s, transform 0.2s;
-      display: flex; align-items: center; gap: 10px;
-    }
+    .books-mini { display: flex; gap: 20px; justify-content: center; margin-top: 44px; flex-wrap: wrap; }
+    .book-mini { background: rgba(255,255,255,0.05); border: 1.5px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 16px 24px; text-decoration: none; color: inherit; font-size: 0.88rem; font-weight: 700; transition: border-color 0.2s, transform 0.2s; display: flex; align-items: center; gap: 10px; }
     .book-mini:hover { border-color: var(--sitr-gold); transform: translateY(-4px); }
     .book-mini span { font-size: 1.5rem; }
-
-    /* === FOOTER === */
-    footer {
-      background: #02050a;
-      text-align: center;
-      padding: 32px 5%;
-      font-size: 0.85rem;
-      color: rgba(255,249,237,0.28);
-    }
+    footer { background: #02050a; text-align: center; padding: 32px 5%; font-size: 0.85rem; color: rgba(255,249,237,0.28); }
     footer a { color: var(--sitr-rain); text-decoration: none; }
     footer a:hover { color: var(--sitr-gold); }
-
-    /* === LIGHTBOX === */
     .lightbox { display: none; position: fixed; inset: 0; z-index: 9999; background: rgba(0,0,0,0.93); align-items: center; justify-content: center; cursor: zoom-out; }
     .lightbox.open { display: flex; }
     .lightbox img { max-width: 85vw; max-height: 85vh; border-radius: 14px; box-shadow: 0 20px 80px rgba(0,0,0,0.8); }
     .lightbox-close { position: fixed; top: 20px; right: 28px; font-size: 2rem; color: white; cursor: pointer; z-index: 10000; }
-
-    /* === SCROLL ANIM === */
     .fade-up { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
     .fade-up.visible { opacity: 1; transform: translateY(0); }
-
-    /* === RESPONSIVE === */
-    @media (max-width: 900px) {
-      .nav-links .nav-link:not(:last-child) { display: none; }
-    }
     @media (max-width: 768px) {
+      .nav-links .nav-link:not(:last-child) { display: none; }
       .hero-inner { grid-template-columns: 1fr; gap: 40px; text-align: center; }
       .hero-cover { order: -1; }
       .hero-btns { justify-content: center; }
@@ -542,7 +202,6 @@
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <a href="/" class="nav-brand">&#x1F981; Guinea <span>Padre</span></a>
   <div class="nav-links">
@@ -552,11 +211,9 @@
   </div>
 </nav>
 
-<!-- ════ HERO: THE SUN IN THE RAIN ════ -->
 <section class="hero">
   <div class="rain-wrap" id="rain"></div>
   <div class="sun-glow"></div>
-
   <div class="hero-inner">
     <div class="hero-text fade-up">
       <div class="hero-eyebrow">
@@ -566,13 +223,13 @@
       <h1 class="hero-title">
         <span class="the">The</span>
         <span class="sun">Sun</span>
-        <span class="in"> in the </span>
+        <span style="color:rgba(255,249,237,0.55);font-size:0.75em;"> in the </span>
         <span class="rain">Rain</span>
       </h1>
       <p class="hero-author">by Guinea Padre</p>
       <p class="hero-synopsis">
         Laidee and Mills are ready for a perfect summer day &mdash; but the clouds had other plans.
-        When the rain arrives uninvited, it takes <strong>a little patience, a warm blanket, and Mommy&#39;s gentle wisdom</strong>
+        When the rain arrives uninvited, it takes <strong>a little patience, a warm blanket, and Mommy's gentle wisdom</strong>
         to discover that sometimes the most beautiful moments bloom right inside the storm.
       </p>
       <div class="hero-btns">
@@ -596,14 +253,12 @@
   </div>
 </section>
 
-<!-- Wave -->
 <div class="wave">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 90" preserveAspectRatio="none">
     <path fill="#1a1035" d="M0,40L60,46.7C120,53,240,67,360,68C480,69,600,57,720,49.3C840,41,960,41,1080,47.3C1200,53,1320,67,1380,73.3L1440,80L1440,90L0,90Z"/>
   </svg>
 </div>
 
-<!-- ════ SITR: THE STORY ════ -->
 <section class="sitr-gallery-section">
   <div class="sitr-story-grid">
     <div class="fade-up">
@@ -614,9 +269,9 @@
         But when the rain taps softly on the windowpane, everything feels like it might fall apart.
       </p>
       <p class="section-desc" style="margin-top:16px">
-        That&#39;s when Mommy pulls them close and shares a secret: <strong style="color:var(--sitr-gold)">sometimes what seems like a ruined day holds hidden gifts.</strong>
+        That's when Mommy pulls them close and shares a secret: <strong style="color:var(--sitr-gold)">sometimes what seems like a ruined day holds hidden gifts.</strong>
         With warmth, wonder, and the coziness of staying in, this is a story about learning to love what you have &mdash;
-        even when it&#39;s raining.
+        even when it's raining.
       </p>
       <div class="sitr-pills">
         <span class="pill">&#x2600;&#xFE0F; Finding Joy in the Unexpected</span>
@@ -627,21 +282,19 @@
       </div>
     </div>
     <div class="sitr-pages fade-up">
-      <img src="assets/sun/page-08.png" alt="Sun in the Rain interior spread" onclick="openLight(this.src)" loading="lazy">
-      <img src="assets/sun/page-12.png" alt="Sun in the Rain interior spread" onclick="openLight(this.src)" loading="lazy">
-      <img src="assets/sun/page-17.png" alt="Sun in the Rain interior spread" onclick="openLight(this.src)" loading="lazy">
+      <img src="assets/sun/page-08.png" alt="Interior spread" onclick="openLight(this.src)" loading="lazy">
+      <img src="assets/sun/page-12.png" alt="Interior spread" onclick="openLight(this.src)" loading="lazy">
+      <img src="assets/sun/page-17.png" alt="Interior spread" onclick="openLight(this.src)" loading="lazy">
     </div>
   </div>
 </section>
 
-<!-- Wave -->
 <div class="wave" style="background:#1a1035">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 80" preserveAspectRatio="none">
     <path fill="#0f0a1e" d="M0,40L80,34.7C160,29,320,19,480,18.7C640,19,800,29,960,34.7C1120,40,1280,40,1360,40L1440,40L1440,80L0,80Z"/>
   </svg>
 </div>
 
-<!-- ════ SITR GALLERY STRIP ════ -->
 <section class="gallery-strip">
   <div style="text-align:center" class="fade-up">
     <p class="section-label gold">Inside the Book</p>
@@ -649,26 +302,25 @@
     <p class="section-desc" style="margin:0 auto;text-align:center">Golden light and rainy-day magic on every spread &mdash; illustrations that make the coziest afternoons feel like the greatest adventures.</p>
   </div>
   <div class="gallery-strip-grid">
-    <div class="strip-item wide fade-up" onclick="openLight(&#39;assets/sun/cover.png&#39;)"><img src="assets/sun/cover.png" alt="Sun in the Rain cover" loading="lazy"></div>
-    <div class="strip-item fade-up" onclick="openLight(&#39;assets/sun/page-03.png&#39;)"><img src="assets/sun/page-03.png" alt="Interior page" loading="lazy"></div>
-    <div class="strip-item fade-up" onclick="openLight(&#39;assets/sun/page-05.png&#39;)"><img src="assets/sun/page-05.png" alt="Interior page" loading="lazy"></div>
-    <div class="strip-item fade-up" onclick="openLight(&#39;assets/sun/page-10.png&#39;)"><img src="assets/sun/page-10.png" alt="Interior page" loading="lazy"></div>
-    <div class="strip-item fade-up" onclick="openLight(&#39;assets/sun/page-14.png&#39;)"><img src="assets/sun/page-14.png" alt="Interior page" loading="lazy"></div>
-    <div class="strip-item fade-up" onclick="openLight(&#39;assets/sun/page-19.png&#39;)"><img src="assets/sun/page-19.png" alt="Interior page" loading="lazy"></div>
-    <div class="strip-item wide fade-up" onclick="openLight(&#39;assets/sun/page-22.png&#39;)"><img src="assets/sun/page-22.png" alt="Interior page" loading="lazy"></div>
-    <div class="strip-item fade-up" onclick="openLight(&#39;assets/sun/page-25.png&#39;)"><img src="assets/sun/page-25.png" alt="Interior page" loading="lazy"></div>
+    <div class="strip-item wide fade-up" onclick="openLight('assets/sun/cover.png')"><img src="assets/sun/cover.png" alt="Cover" loading="lazy"></div>
+    <div class="strip-item fade-up" onclick="openLight('assets/sun/page-03.png')"><img src="assets/sun/page-03.png" alt="Page" loading="lazy"></div>
+    <div class="strip-item fade-up" onclick="openLight('assets/sun/page-05.png')"><img src="assets/sun/page-05.png" alt="Page" loading="lazy"></div>
+    <div class="strip-item fade-up" onclick="openLight('assets/sun/page-10.png')"><img src="assets/sun/page-10.png" alt="Page" loading="lazy"></div>
+    <div class="strip-item fade-up" onclick="openLight('assets/sun/page-14.png')"><img src="assets/sun/page-14.png" alt="Page" loading="lazy"></div>
+    <div class="strip-item fade-up" onclick="openLight('assets/sun/page-19.png')"><img src="assets/sun/page-19.png" alt="Page" loading="lazy"></div>
+    <div class="strip-item wide fade-up" onclick="openLight('assets/sun/page-22.png')"><img src="assets/sun/page-22.png" alt="Page" loading="lazy"></div>
+    <div class="strip-item fade-up" onclick="openLight('assets/sun/page-25.png')"><img src="assets/sun/page-25.png" alt="Page" loading="lazy"></div>
   </div>
 </section>
 
-<!-- ════ SITR BUY CTA ════ -->
 <section class="sitr-cta">
   <div class="sitr-cta-inner fade-up">
     <p class="section-label gold" style="display:block;text-align:center">&#x1F4D6; Available Now in Paperback</p>
     <h2 class="sitr-cta-title">Give Them the Gift of a Rainy Day Story</h2>
     <p class="sitr-cta-desc">
       Perfect for bedtime, rainy afternoons, or any moment your little one needs a reminder
-      that life&#39;s most beautiful surprises sometimes arrive wearing raindrops.
-      <strong style="color:var(--sitr-gold)">The Sun in the Rain</strong> — the newest adventure from Guinea Padre.
+      that life's most beautiful surprises sometimes arrive wearing raindrops.
+      <strong style="color:var(--sitr-gold)">The Sun in the Rain</strong> &mdash; the newest adventure from Guinea Padre.
     </p>
     <div class="sitr-cta-btns">
       <a href="https://www.amazon.com/dp/B0GPWTGNMG" target="_blank" rel="noopener" class="btn-sitr-main">
@@ -681,26 +333,23 @@
         <div class="trust-item">&#x1F4DA; SEL Picture Book</div>
       </div>
       <p style="margin-top:8px;font-size:0.8rem;color:rgba(255,249,237,0.3)">
-        Prefer digital? <a href="https://www.amazon.com/Sun-Rain-Adventures-Laidee-Mills-ebook/dp/B0GPSZV866" target="_blank" rel="noopener" style="color:rgba(126,184,212,0.6);text-decoration:none;">Kindle edition also available</a>
+        Prefer digital? <a href="https://www.amazon.com/Sun-Rain-Adventures-Laidee-Mills-ebook/dp/B0GPSZV866" target="_blank" rel="noopener" style="color:rgba(126,184,212,0.55);text-decoration:none;">Kindle edition also available</a>
       </p>
     </div>
   </div>
 </section>
 
-<!-- DIVIDER WAVE -->
 <div class="wave" style="background:radial-gradient(ellipse at 50% 60%,rgba(45,27,107,.8),#0f0a1e 70%)">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 80" preserveAspectRatio="none">
     <path fill="#FFF9ED" d="M0,48L80,42.7C160,37,320,27,480,26.7C640,27,800,37,960,42.7C1120,48,1280,48,1360,48L1440,48L1440,80L0,80Z"/>
   </svg>
 </div>
 
-<!-- ════ ALSO BY DIVIDER ════ -->
 <div class="books-divider">
   <p class="divider-label">Also by Guinea Padre</p>
   <p class="divider-sub">The Adventures of Laidee and Mills &bull; Book 1</p>
 </div>
 
-<!-- ════ FINTASTIC SECTION ════ -->
 <section class="fintastic-section">
   <div class="fintastic-inner">
     <div class="fin-cover fade-up">
@@ -722,27 +371,25 @@
       </div>
       <a href="/fintastic/" class="btn-fin">&#x1F420; Explore This Book</a>
       <p style="margin-top:16px">
-        <a href="https://www.amazon.com/Fintastic-Aquarium-Adventures-Laidee-Mills/dp/B0FYCGVNM1/ref=sr_1_1?sr=8-1" target="_blank" rel="noopener" style="font-size:0.88rem;color:rgba(255,249,237,0.4);text-decoration:none;">Or buy directly on Amazon &rarr;</a>
+        <a href="https://www.amazon.com/Fintastic-Aquarium-Adventures-Laidee-Mills/dp/B0FYCGVNM1/ref=sr_1_1?sr=8-1" target="_blank" rel="noopener" style="font-size:0.88rem;color:rgba(255,249,237,0.35);text-decoration:none;">Or buy directly on Amazon &rarr;</a>
       </p>
     </div>
   </div>
 </section>
 
-<!-- Wave -->
 <div class="wave" style="background:radial-gradient(ellipse at 40% 50%,#1a7fa0,#0B2F45 100%)">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 80" preserveAspectRatio="none">
     <path fill="#040810" d="M0,32L80,37.3C160,43,320,53,480,56C640,59,800,53,960,45.3C1120,37,1280,27,1360,21.3L1440,16L1440,80L0,80Z"/>
   </svg>
 </div>
 
-<!-- ════ AUTHOR ════ -->
 <section class="author-section">
   <div class="author-inner fade-up">
     <div class="author-avatar">&#x1F981;</div>
     <div class="author-name">Guinea Padre</div>
-    <div class="author-role">Children&#39;s Book Author &bull; The Adventures of Laidee and Mills</div>
+    <div class="author-role">Children's Book Author &bull; The Adventures of Laidee and Mills</div>
     <p class="author-bio">
-      Guinea Padre is a children&#39;s book author with a gift for meeting little hearts exactly where they are.
+      Guinea Padre is a children's book author with a gift for meeting little hearts exactly where they are.
       Through the eyes of Laidee and Mills, these books explore the big emotions of childhood
       with warmth, wonder, and the kind of wisdom that stays with a child long after the final page.
     </p>
@@ -768,7 +415,6 @@
   </div>
 </section>
 
-<!-- ════ FOOTER ════ -->
 <footer>
   <p>&copy; 2025 Guinea Padre &bull; The Adventures of Laidee and Mills</p>
   <p style="margin-top:10px">
@@ -781,7 +427,6 @@
   </p>
 </footer>
 
-<!-- Lightbox -->
 <div class="lightbox" id="lightbox" onclick="closeLight()">
   <div class="lightbox-close" onclick="closeLight()">&#x2715;</div>
   <img id="lightbox-img" src="" alt="Book page preview">
@@ -789,32 +434,30 @@
 
 <script>
   // Rain animation
-  const rainWrap = document.getElementById(&#39;rain&#39;);
+  const rainWrap = document.getElementById('rain');
   for (let i = 0; i < 60; i++) {
-    const d = document.createElement(&#39;div&#39;);
-    d.className = &#39;raindrop&#39;;
+    const d = document.createElement('div');
+    d.className = 'raindrop';
     const h = 40 + Math.random() * 80;
-    d.style.cssText = `left:${Math.random()*100}%;height:${h}px;animation-duration:${0.6+Math.random()*0.8}s;animation-delay:${Math.random()*-2}s;opacity:${0.3+Math.random()*0.4}`;
+    d.style.cssText = 'left:' + (Math.random()*100) + '%;height:' + h + 'px;animation-duration:' + (0.6+Math.random()*0.8) + 's;animation-delay:' + (Math.random()*-2) + 's;opacity:' + (0.3+Math.random()*0.4);
     rainWrap.appendChild(d);
   }
-
   // Lightbox
   function openLight(src) {
-    document.getElementById(&#39;lightbox-img&#39;).src = src;
-    document.getElementById(&#39;lightbox&#39;).classList.add(&#39;open&#39;);
-    document.body.style.overflow = &#39;hidden&#39;;
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
   }
   function closeLight() {
-    document.getElementById(&#39;lightbox&#39;).classList.remove(&#39;open&#39;);
-    document.body.style.overflow = &#39;&#39;;
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
   }
-  document.addEventListener(&#39;keydown&#39;, e => e.key === &#39;Escape&#39; && closeLight());
-
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLight(); });
   // Scroll fade-up
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add(&#39;visible&#39;); });
+  const obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.1 });
-  document.querySelectorAll(&#39;.fade-up&#39;).forEach(el => obs.observe(el));
+  document.querySelectorAll('.fade-up').forEach(function(el) { obs.observe(el); });
 </script>
 </body>
 </html>
