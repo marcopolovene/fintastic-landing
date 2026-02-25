@@ -3,100 +3,112 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>A Fintastic Day at the Aquarium — Children's Book by Guinea Padre</title>
-  <meta name="description" content="Join Laidee and Mills on a magical aquarium adventure where they discover the power of the serenity prayer. A beautiful children's picture book about emotions, frustration, and what we can control.">
-
-  <!-- Google Fonts -->
+  <title>Guinea Padre Books &mdash; The Adventures of Laidee &amp; Mills</title>
+  <meta name="description" content="Children&#39;s books by Guinea Padre. The Sun in the Rain and A Fintastic Day at the Aquarium &mdash; heartfelt picture books for ages 3&ndash;8 about emotions, family, and wonder.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fredoka+One&display=swap" rel="stylesheet">
-
   <style>
-    /* ═══ RESET & BASE ═══ */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Nunito', sans-serif;
-      background: #0B2F45;
-      color: #FFF9ED;
-      overflow-x: hidden;
-    }
+    body { font-family: &#39;Nunito&#39;, sans-serif; color: #FFF9ED; overflow-x: hidden; background: #0f0a1e; }
 
-    /* ═══ VARIABLES ═══ */
+    /* === PALETTE === */
     :root {
-      --ocean-deep:  #0B2F45;
-      --ocean-mid:   #0d4f6e;
-      --ocean-light: #1a7fa0;
-      --aqua:        #00C9D4;
-      --gold:        #F4C842;
-      --gold-dark:   #D4A017;
-      --coral:       #FF6B6B;
-      --green:       #3EC97A;
+      /* Sun in the Rain palette */
+      --sitr-deep:   #0f0a1e;
+      --sitr-mid:    #1a1035;
+      --sitr-indigo: #2d1b6b;
+      --sitr-gold:   #F5B800;
+      --sitr-amber:  #FF8C00;
+      --sitr-rain:   #7EB8D4;
+      --sitr-rose:   #E87CA0;
+      --sitr-cream:  #FFF8EE;
+      /* Fintastic palette */
+      --fin-deep:    #0B2F45;
+      --fin-mid:     #0d4f6e;
+      --fin-aqua:    #00C9D4;
+      --fin-gold:    #F4C842;
       --cream:       #FFF9ED;
       --navy-text:   #0B2F45;
     }
 
-    /* ═══ STICKY NAV ═══ */
+    /* === NAV === */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
       display: flex; align-items: center; justify-content: space-between;
       padding: 14px 5%;
-      background: rgba(11, 47, 69, 0.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 2px solid rgba(0,201,212,0.25);
+      background: rgba(15,10,30,0.88);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(245,184,0,0.2);
     }
-    .nav-logo {
-      font-family: 'Fredoka One', cursive;
-      font-size: 1.3rem;
-      color: var(--gold);
+    .nav-brand {
+      font-family: &#39;Fredoka One&#39;, cursive;
+      font-size: 1.25rem;
+      color: var(--sitr-gold);
       text-decoration: none;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.3px;
     }
-    .nav-logo span { color: var(--aqua); }
+    .nav-brand span { color: var(--sitr-rain); }
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+    .nav-link {
+      color: rgba(255,249,237,0.7);
+      text-decoration: none; font-weight: 700;
+      font-size: 0.9rem; transition: color 0.2s;
+    }
+    .nav-link:hover { color: var(--sitr-gold); }
     .nav-cta {
       display: inline-flex; align-items: center; gap: 8px;
-      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
-      color: var(--navy-text);
-      font-weight: 900; font-size: 0.9rem;
-      padding: 10px 22px;
-      border-radius: 50px;
-      text-decoration: none;
-      box-shadow: 0 4px 20px rgba(244,200,66,0.5);
+      background: linear-gradient(135deg, var(--sitr-gold), var(--sitr-amber));
+      color: #1a0a00; font-weight: 900; font-size: 0.88rem;
+      padding: 10px 22px; border-radius: 50px; text-decoration: none;
+      box-shadow: 0 4px 20px rgba(245,184,0,0.45);
       transition: transform 0.2s, box-shadow 0.2s;
     }
-    .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(244,200,66,0.7); }
-    .nav-cta svg { width: 18px; height: 18px; }
+    .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(245,184,0,0.65); }
 
-    /* ═══ HERO ═══ */
+    /* === HERO === */
     .hero {
       min-height: 100vh;
       position: relative;
       display: flex; align-items: center;
       overflow: hidden;
-      background: radial-gradient(ellipse at 60% 40%, #1a7fa0 0%, #0d4f6e 40%, #0B2F45 100%);
+      background: radial-gradient(ellipse at 55% 35%, #2d1b6b 0%, #1a1035 45%, #0f0a1e 100%);
       padding-top: 80px;
     }
-    /* Animated bubbles */
-    .bubbles { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
-    .bubble {
-      position: absolute; border-radius: 50%;
-      background: rgba(0,201,212,0.12);
-      border: 1px solid rgba(0,201,212,0.25);
-      animation: rise linear infinite;
+
+    /* Animated rain drops */
+    .rain-wrap { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+    .raindrop {
+      position: absolute;
+      width: 1.5px;
+      background: linear-gradient(to bottom, transparent, rgba(126,184,212,0.6), transparent);
+      animation: fall linear infinite;
+      border-radius: 2px;
     }
-    @keyframes rise {
-      0%   { transform: translateY(100vh) scale(0.8); opacity: 0; }
+    @keyframes fall {
+      0%   { transform: translateY(-80px); opacity: 0; }
       10%  { opacity: 1; }
-      90%  { opacity: 0.6; }
-      100% { transform: translateY(-120px) scale(1.1); opacity: 0; }
+      90%  { opacity: 0.5; }
+      100% { transform: translateY(110vh); opacity: 0; }
     }
-    /* Floating fish */
-    .fish-float {
-      position: absolute; opacity: 0.18;
-      animation: swim linear infinite;
+
+    /* Sun rays */
+    .sun-glow {
+      position: absolute;
+      top: -10%;
+      right: -5%;
+      width: 65vw; height: 65vw;
+      background: radial-gradient(ellipse at 60% 40%,
+        rgba(245,184,0,0.22) 0%,
+        rgba(255,140,0,0.10) 35%,
+        transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+      animation: pulse-sun 6s ease-in-out infinite;
     }
-    @keyframes swim {
-      0%   { transform: translateX(-120px); }
-      100% { transform: translateX(calc(100vw + 120px)); }
+    @keyframes pulse-sun {
+      0%,100% { transform: scale(1); opacity: 0.8; }
+      50% { transform: scale(1.07); opacity: 1; }
     }
 
     .hero-inner {
@@ -110,790 +122,699 @@
       padding: 60px 5%;
       width: 100%;
     }
-    .hero-text {}
-    .hero-badge {
+
+    /* NEW RELEASE BADGE */
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      margin-bottom: 22px;
+    }
+    .hero-badge-new {
       display: inline-block;
-      background: rgba(0,201,212,0.2);
-      border: 1px solid var(--aqua);
-      color: var(--aqua);
-      font-size: 0.75rem; font-weight: 700;
-      letter-spacing: 2px; text-transform: uppercase;
+      background: linear-gradient(135deg, var(--sitr-gold), var(--sitr-amber));
+      color: #1a0a00;
+      font-size: 0.7rem; font-weight: 900;
+      letter-spacing: 2.5px; text-transform: uppercase;
       padding: 6px 16px; border-radius: 50px;
-      margin-bottom: 20px;
     }
+    .hero-badge-series {
+      font-size: 0.8rem; font-weight: 700;
+      color: var(--sitr-rain);
+      letter-spacing: 1px;
+    }
+
     .hero-title {
-      font-family: 'Fredoka One', cursive;
-      font-size: clamp(2.8rem, 6vw, 4.8rem);
-      line-height: 1.05;
-      color: var(--gold);
-      text-shadow: 0 3px 20px rgba(244,200,66,0.4);
-      margin-bottom: 8px;
+      font-family: &#39;Fredoka One&#39;, cursive;
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      line-height: 1.0;
+      margin-bottom: 10px;
     }
-    .hero-title .aqua { color: var(--aqua); }
-    .hero-subtitle {
-      font-size: 1.0rem; color: rgba(255,249,237,0.7);
+    .hero-title .the { color: rgba(255,249,237,0.6); font-size: 0.55em; display: block; margin-bottom: 4px; }
+    .hero-title .sun { color: var(--sitr-gold); text-shadow: 0 0 40px rgba(245,184,0,0.6), 0 3px 20px rgba(245,184,0,0.4); }
+    .hero-title .in  { color: rgba(255,249,237,0.55); font-size: 0.75em; }
+    .hero-title .rain { color: var(--sitr-rain); text-shadow: 0 0 30px rgba(126,184,212,0.5); }
+
+    .hero-author {
+      font-size: 1rem; color: rgba(255,249,237,0.6);
       font-weight: 600; letter-spacing: 0.5px;
-      margin-bottom: 28px;
+      margin-bottom: 26px;
     }
+
     .hero-synopsis {
       font-size: 1.1rem;
-      color: rgba(255,249,237,0.9);
-      line-height: 1.75;
-      margin-bottom: 36px;
+      color: rgba(255,249,237,0.88);
+      line-height: 1.8;
+      margin-bottom: 38px;
       max-width: 500px;
     }
-    .hero-synopsis strong { color: var(--gold); }
-    .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
-    .btn-primary {
-      display: inline-flex; align-items: center; gap: 10px;
-      background: linear-gradient(135deg, #FF9900, #FF6600);
-      color: white;
-      font-weight: 900; font-size: 1.1rem;
-      padding: 16px 36px;
-      border-radius: 50px;
-      text-decoration: none;
-      box-shadow: 0 6px 30px rgba(255,150,0,0.55);
-      transition: transform 0.2s, box-shadow 0.2s;
-      border: none; cursor: pointer;
-    }
-    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(255,150,0,0.7); }
-    .btn-secondary {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(255,249,237,0.1);
-      border: 2px solid rgba(255,249,237,0.35);
-      color: var(--cream);
-      font-weight: 700; font-size: 1rem;
-      padding: 14px 28px;
-      border-radius: 50px;
-      text-decoration: none;
-      transition: background 0.2s;
-    }
-    .btn-secondary:hover { background: rgba(255,249,237,0.18); }
-    .hero-stars {
-      display: flex; align-items: center; gap: 8px;
-      margin-top: 28px; font-size: 0.9rem; color: rgba(255,249,237,0.65);
-    }
-    .stars { color: var(--gold); font-size: 1.1rem; letter-spacing: 2px; }
+    .hero-synopsis strong { color: var(--sitr-gold); }
 
-    /* Hero book cover */
-    .hero-cover {
-      position: relative;
-      display: flex; justify-content: center;
+    .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+    .btn-amazon {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: linear-gradient(135deg, #FF9900, #e07800);
+      color: white; font-weight: 900; font-size: 1.1rem;
+      padding: 16px 36px; border-radius: 50px; text-decoration: none;
+      box-shadow: 0 6px 30px rgba(255,150,0,0.5);
+      transition: transform 0.2s, box-shadow 0.2s;
     }
+    .btn-amazon:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(255,150,0,0.7); }
+    .btn-kindle {
+      font-size: 0.82rem; color: rgba(255,249,237,0.45);
+      text-decoration: none; font-weight: 600;
+      border-bottom: 1px solid rgba(255,249,237,0.2);
+      padding-bottom: 1px;
+      transition: color 0.2s;
+    }
+    .btn-kindle:hover { color: rgba(255,249,237,0.75); }
+
+    /* Hero Cover */
+    .hero-cover { position: relative; display: flex; justify-content: center; }
     .hero-cover img {
       width: 100%; max-width: 460px;
-      border-radius: 16px;
+      border-radius: 20px;
       box-shadow:
-        0 30px 80px rgba(0,0,0,0.6),
-        0 0 60px rgba(0,201,212,0.2),
-        inset 0 0 0 3px rgba(255,255,255,0.1);
-      animation: float 5s ease-in-out infinite;
+        0 40px 100px rgba(0,0,0,0.7),
+        0 0 80px rgba(245,184,0,0.15),
+        0 0 0 1px rgba(245,184,0,0.1);
+      animation: float-book 6s ease-in-out infinite;
     }
-    @keyframes float {
-      0%,100% { transform: translateY(0px) rotate(-1deg); }
-      50%      { transform: translateY(-14px) rotate(1deg); }
+    @keyframes float-book {
+      0%,100% { transform: translateY(0) rotate(-0.5deg); }
+      50%      { transform: translateY(-16px) rotate(0.5deg); }
     }
-    .cover-glow {
+    .cover-sun-glow {
       position: absolute;
-      width: 80%; height: 80%;
-      top: 10%; left: 10%;
-      background: radial-gradient(ellipse, rgba(0,201,212,0.25) 0%, transparent 70%);
-      filter: blur(40px);
+      width: 90%; height: 90%;
+      top: 5%; left: 5%;
+      background: radial-gradient(ellipse, rgba(245,184,0,0.18) 0%, transparent 65%);
+      filter: blur(30px);
       pointer-events: none;
     }
-    /* Age badge */
     .age-badge {
       position: absolute;
-      top: -12px; right: -12px;
-      background: var(--coral);
-      color: white;
-      font-family: 'Fredoka One', cursive;
-      font-size: 0.8rem;
-      padding: 8px 14px;
+      top: -14px; right: -14px;
+      background: var(--sitr-rose);
+      color: white; font-family: &#39;Fredoka One&#39;, cursive;
+      font-size: 0.8rem; padding: 8px 16px;
       border-radius: 50px;
-      box-shadow: 0 4px 16px rgba(255,107,107,0.5);
+      box-shadow: 0 4px 20px rgba(232,124,160,0.5);
       white-space: nowrap;
     }
 
-    /* ═══ WAVE DIVIDER ═══ */
+    /* Stars row */
+    .hero-social {
+      display: flex; align-items: center; gap: 12px;
+      margin-top: 26px; flex-wrap: wrap;
+    }
+    .star-row { color: var(--sitr-gold); font-size: 1.05rem; letter-spacing: 2px; }
+    .star-label { font-size: 0.88rem; color: rgba(255,249,237,0.55); }
+
+    /* === WAVE === */
     .wave { width: 100%; overflow: hidden; line-height: 0; display: block; }
     .wave svg { display: block; width: 100%; }
 
-    /* ═══ SECTIONS ═══ */
-    section { padding: 80px 5%; }
-
+    /* === SITR INTERIOR GALLERY === */
+    .sitr-gallery-section {
+      background: linear-gradient(180deg, var(--sitr-mid) 0%, var(--sitr-deep) 100%);
+      padding: 80px 5%;
+    }
     .section-label {
       display: inline-block;
-      font-size: 0.75rem; font-weight: 800;
+      font-size: 0.72rem; font-weight: 800;
       letter-spacing: 3px; text-transform: uppercase;
-      color: var(--aqua);
       margin-bottom: 14px;
     }
+    .section-label.gold { color: var(--sitr-gold); }
+    .section-label.aqua { color: var(--fin-aqua); }
     .section-title {
-      font-family: 'Fredoka One', cursive;
+      font-family: &#39;Fredoka One&#39;, cursive;
       font-size: clamp(2rem, 4vw, 3rem);
-      color: var(--gold);
-      margin-bottom: 16px;
       line-height: 1.15;
+      margin-bottom: 16px;
     }
     .section-desc {
-      font-size: 1.1rem;
-      color: rgba(255,249,237,0.75);
-      line-height: 1.8;
+      font-size: 1.05rem;
+      color: rgba(255,249,237,0.72);
+      line-height: 1.85;
       max-width: 640px;
     }
-    .center-text { text-align: center; margin: 0 auto; }
-    .center-text .section-desc { margin: 0 auto; }
 
-    /* ═══ ABOUT SECTION ═══ */
-    .about-section { background: var(--cream); color: var(--navy-text); }
-    .about-section .section-title { color: var(--ocean-mid); }
-    .about-section .section-label { color: var(--ocean-light); }
-    .about-section .section-desc { color: #2a4a5e; }
-    .about-inner {
-      max-width: 1100px; margin: 0 auto;
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 60px; align-items: center;
+    .sitr-story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
     }
-    .about-pages {
-      display: grid; grid-template-columns: 1fr 1fr;
+    .sitr-pages {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       gap: 12px;
     }
-    .about-pages img {
-      width: 100%; border-radius: 12px;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.18);
-      transition: transform 0.3s;
+    .sitr-pages img {
+      width: 100%; border-radius: 14px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+      transition: transform 0.3s, box-shadow 0.3s;
       cursor: pointer;
     }
-    .about-pages img:hover { transform: scale(1.04); }
-    .about-pages img:first-child {
-      grid-column: span 2;
-      max-height: 260px;
-      object-fit: cover;
-      object-position: center top;
-    }
-    .lesson-pills {
-      display: flex; flex-wrap: wrap; gap: 10px;
-      margin-top: 24px;
-    }
+    .sitr-pages img:hover { transform: scale(1.04); box-shadow: 0 16px 48px rgba(245,184,0,0.2); }
+    .sitr-pages img:first-child { grid-column: span 2; max-height: 280px; object-fit: cover; object-position: center; }
+    .sitr-pills { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
     .pill {
       display: inline-flex; align-items: center; gap: 6px;
-      background: rgba(13,79,110,0.12);
-      border: 1.5px solid rgba(13,79,110,0.25);
-      color: var(--ocean-mid);
-      font-size: 0.85rem; font-weight: 700;
-      padding: 7px 16px;
-      border-radius: 50px;
+      background: rgba(245,184,0,0.1);
+      border: 1.5px solid rgba(245,184,0,0.25);
+      color: var(--sitr-gold);
+      font-size: 0.83rem; font-weight: 700;
+      padding: 7px 16px; border-radius: 50px;
+    }
+    .pill.rain {
+      background: rgba(126,184,212,0.1);
+      border-color: rgba(126,184,212,0.25);
+      color: var(--sitr-rain);
     }
 
-    /* ═══ CHARACTERS SECTION ═══ */
-    .chars-section {
-      background: linear-gradient(180deg, #0B2F45 0%, #0d4f6e 100%);
+    /* === SITR GALLERY STRIP === */
+    .gallery-strip {
+      background: var(--sitr-deep);
+      padding: 60px 5%;
     }
-    .chars-grid {
+    .gallery-strip-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
-      max-width: 1000px;
-      margin: 48px auto 0;
-    }
-    .char-card {
-      background: rgba(255,255,255,0.05);
-      border: 1.5px solid rgba(0,201,212,0.2);
-      border-radius: 20px;
-      overflow: hidden;
-      text-align: center;
-      padding: 28px 20px;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .char-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 50px rgba(0,201,212,0.2);
-      border-color: rgba(0,201,212,0.5);
-    }
-    .char-img-wrap {
-      width: 120px; height: 120px;
-      border-radius: 50%;
-      overflow: hidden;
-      margin: 0 auto 16px;
-      border: 3px solid var(--aqua);
-      box-shadow: 0 4px 20px rgba(0,201,212,0.3);
-    }
-    .char-img-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
-    .char-name {
-      font-family: 'Fredoka One', cursive;
-      font-size: 1.4rem;
-      color: var(--gold);
-      margin-bottom: 6px;
-    }
-    .char-desc { font-size: 0.9rem; color: rgba(255,249,237,0.7); line-height: 1.6; }
-
-    /* ═══ GALLERY SECTION ═══ */
-    .gallery-section { background: #061f2e; }
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-      max-width: 1100px;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+      max-width: 1200px;
       margin: 44px auto 0;
     }
-    .gallery-item {
-      position: relative;
-      border-radius: 12px;
-      overflow: hidden;
+    .strip-item {
+      border-radius: 14px; overflow: hidden;
       cursor: pointer;
-      aspect-ratio: 3/4;
-      background: rgba(255,255,255,0.05);
+      aspect-ratio: 4/5;
+      position: relative;
     }
-    .gallery-item img {
+    .strip-item img {
       width: 100%; height: 100%;
       object-fit: cover;
       transition: transform 0.4s;
     }
-    .gallery-item:hover img { transform: scale(1.08); }
-    .gallery-item::after {
-      content: '🔍';
+    .strip-item:hover img { transform: scale(1.08); }
+    .strip-item::after {
+      content: &#39;&#39;;
       position: absolute; inset: 0;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 2rem;
-      background: rgba(0,201,212,0.25);
-      opacity: 0;
-      transition: opacity 0.3s;
+      background: linear-gradient(to top, rgba(15,10,30,0.5) 0%, transparent 50%);
+      pointer-events: none;
     }
-    .gallery-item:hover::after { opacity: 1; }
-    /* Featured page spanning 2 cols */
-    .gallery-item.featured {
-      grid-column: span 2;
-      aspect-ratio: 3/2;
-    }
+    .strip-item.wide { grid-column: span 2; aspect-ratio: 8/5; }
 
-    /* ═══ LIGHTBOX ═══ */
-    .lightbox {
-      display: none; position: fixed; inset: 0; z-index: 9999;
-      background: rgba(0,0,0,0.92);
-      align-items: center; justify-content: center;
-      cursor: zoom-out;
-    }
-    .lightbox.open { display: flex; }
-    .lightbox img {
-      max-width: 85vw; max-height: 85vh;
-      border-radius: 12px;
-      box-shadow: 0 20px 80px rgba(0,0,0,0.8);
-    }
-    .lightbox-close {
-      position: fixed; top: 20px; right: 28px;
-      font-size: 2rem; color: white; cursor: pointer;
-      z-index: 10000; line-height: 1;
-    }
-
-    /* ═══ LESSONS SECTION ═══ */
-    .lessons-section {
-      background: linear-gradient(135deg, #0d4f6e 0%, #0B2F45 100%);
-    }
-    .lessons-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
-      max-width: 1000px;
-      margin: 48px auto 0;
-    }
-    .lesson-card {
-      background: rgba(255,255,255,0.05);
-      border: 1.5px solid rgba(244,200,66,0.2);
-      border-radius: 20px;
-      padding: 32px 24px;
+    /* === SITR BUY CTA === */
+    .sitr-cta {
+      background: radial-gradient(ellipse at 50% 60%, rgba(45,27,107,0.8) 0%, var(--sitr-deep) 70%);
       text-align: center;
-      transition: border-color 0.3s, transform 0.3s;
+      padding: 90px 5%;
+      position: relative;
+      overflow: hidden;
     }
-    .lesson-card:hover {
-      border-color: rgba(244,200,66,0.5);
-      transform: translateY(-6px);
+    .sitr-cta::before {
+      content: &#39;&#39;;
+      position: absolute;
+      top: -40%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px; height: 600px;
+      background: radial-gradient(ellipse, rgba(245,184,0,0.12) 0%, transparent 65%);
+      pointer-events: none;
     }
-    .lesson-icon { font-size: 2.8rem; margin-bottom: 16px; }
-    .lesson-title {
-      font-family: 'Fredoka One', cursive;
-      font-size: 1.2rem;
-      color: var(--gold);
-      margin-bottom: 10px;
+    .sitr-cta-inner { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+    .sitr-cta-title {
+      font-family: &#39;Fredoka One&#39;, cursive;
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      color: var(--sitr-gold);
+      line-height: 1.15;
+      margin-bottom: 18px;
     }
-    .lesson-text { font-size: 0.9rem; color: rgba(255,249,237,0.72); line-height: 1.7; }
+    .sitr-cta-desc {
+      font-size: 1.05rem;
+      color: rgba(255,249,237,0.72);
+      line-height: 1.8;
+      margin-bottom: 40px;
+    }
+    .sitr-cta-btns { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+    .btn-sitr-main {
+      display: inline-flex; align-items: center; gap: 14px;
+      background: linear-gradient(135deg, #FF9900, #e07800);
+      color: white; font-weight: 900; font-size: 1.25rem;
+      padding: 20px 52px; border-radius: 50px; text-decoration: none;
+      box-shadow: 0 8px 40px rgba(255,150,0,0.55);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .btn-sitr-main:hover { transform: translateY(-4px); box-shadow: 0 16px 54px rgba(255,150,0,0.75); }
+    .sitr-trust {
+      display: flex; align-items: center; justify-content: center;
+      gap: 24px; margin-top: 36px; flex-wrap: wrap;
+    }
+    .trust-item { display: flex; align-items: center; gap: 8px; font-size: 0.83rem; color: rgba(255,249,237,0.5); }
 
-    /* ═══ SERENITY QUOTE ═══ */
-    .quote-section {
+    /* === DIVIDER === */
+    .books-divider {
       background: var(--cream);
       text-align: center;
-      padding: 80px 5%;
+      padding: 56px 5%;
     }
-    .serenity-quote {
-      max-width: 720px; margin: 0 auto;
-      font-family: 'Fredoka One', cursive;
-      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
-      line-height: 1.5;
-      color: var(--ocean-mid);
+    .divider-label {
+      font-family: &#39;Fredoka One&#39;, cursive;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      color: var(--fin-mid);
+      margin-bottom: 8px;
     }
-    .serenity-quote em {
-      display: block;
-      font-style: normal;
-      color: var(--ocean-light);
-      font-size: 0.75em;
-      margin-top: 12px;
-      font-family: 'Nunito', sans-serif;
-      font-weight: 700;
-    }
-    .quote-mark {
-      font-size: 5rem;
-      color: var(--aqua);
-      opacity: 0.3;
-      line-height: 0;
-      vertical-align: -0.4em;
+    .divider-sub {
+      font-size: 0.95rem;
+      color: rgba(11,47,69,0.55);
+      font-weight: 600;
     }
 
-    /* ═══ AUTHOR SECTION ═══ */
-    .author-section {
-      background: #061f2e;
-      text-align: center;
-    }
-    .author-inner {
-      max-width: 700px;
-      margin: 0 auto;
-    }
-    .author-avatar {
-      width: 100px; height: 100px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--aqua), var(--ocean-mid));
-      display: flex; align-items: center; justify-content: center;
-      font-size: 2.5rem;
-      margin: 0 auto 24px;
-      border: 3px solid var(--gold);
-    }
-    .author-name {
-      font-family: 'Fredoka One', cursive;
-      font-size: 1.6rem;
-      color: var(--gold);
-      margin-bottom: 6px;
-    }
-    .author-role { font-size: 0.9rem; color: var(--aqua); font-weight: 700; margin-bottom: 20px; }
-    .author-bio { font-size: 1rem; color: rgba(255,249,237,0.72); line-height: 1.8; }
-
-    /* ═══ CTA SECTION ═══ */
-    .cta-section {
-      background: linear-gradient(135deg, #0d4f6e, #0B2F45);
-      text-align: center;
+    /* === FINTASTIC SECTION === */
+    .fintastic-section {
+      background: radial-gradient(ellipse at 40% 50%, #1a7fa0 0%, #0d4f6e 45%, #0B2F45 100%);
       padding: 100px 5%;
       position: relative;
       overflow: hidden;
     }
-    .cta-section::before {
-      content: '🐠🐡🦦🐙🦑🐟';
-      position: absolute;
-      top: 20px; left: 0; right: 0;
-      font-size: 2rem;
-      opacity: 0.08;
-      letter-spacing: 60px;
-      white-space: nowrap;
-      overflow: hidden;
+    /* Bubbles BG */
+    .fintastic-section::before {
+      content: &#39;&#39;;
+      position: absolute; inset: 0;
+      background-image:
+        radial-gradient(circle at 20% 80%, rgba(0,201,212,0.08) 0%, transparent 40%),
+        radial-gradient(circle at 80% 20%, rgba(0,201,212,0.06) 0%, transparent 40%);
+      pointer-events: none;
     }
-    .cta-inner { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; }
-    .cta-pretitle {
-      font-size: 0.85rem; font-weight: 800;
-      letter-spacing: 3px; text-transform: uppercase;
-      color: var(--aqua);
-      margin-bottom: 18px;
+    .fintastic-inner {
+      position: relative; z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
     }
-    .cta-title {
-      font-family: 'Fredoka One', cursive;
-      font-size: clamp(2.2rem, 5vw, 3.8rem);
-      color: var(--gold);
-      margin-bottom: 20px;
-      line-height: 1.15;
+    .fin-cover { position: relative; display: flex; justify-content: center; }
+    .fin-cover img {
+      width: 100%; max-width: 400px;
+      border-radius: 18px;
+      box-shadow:
+        0 30px 80px rgba(0,0,0,0.55),
+        0 0 60px rgba(0,201,212,0.15);
+      animation: float-fin 5s ease-in-out infinite;
     }
-    .cta-desc {
-      font-size: 1.1rem;
-      color: rgba(255,249,237,0.75);
-      line-height: 1.75;
-      margin-bottom: 44px;
+    @keyframes float-fin {
+      0%,100% { transform: translateY(0) rotate(0.5deg); }
+      50% { transform: translateY(-12px) rotate(-0.5deg); }
     }
-    .cta-btn {
-      display: inline-flex; align-items: center; gap: 14px;
-      background: linear-gradient(135deg, #FF9900, #FF6600);
-      color: white;
-      font-weight: 900; font-size: 1.3rem;
-      padding: 20px 52px;
-      border-radius: 50px;
-      text-decoration: none;
-      box-shadow: 0 8px 40px rgba(255,150,0,0.6);
-      transition: transform 0.25s, box-shadow 0.25s;
-      letter-spacing: 0.5px;
+    .fin-glow {
+      position: absolute; width: 80%; height: 80%; top: 10%; left: 10%;
+      background: radial-gradient(ellipse, rgba(0,201,212,0.2) 0%, transparent 70%);
+      filter: blur(36px); pointer-events: none;
     }
-    .cta-btn:hover { transform: translateY(-4px); box-shadow: 0 16px 54px rgba(255,150,0,0.8); }
-    .cta-sub { margin-top: 20px; font-size: 0.85rem; color: rgba(255,249,237,0.45); }
-    .cta-trust {
-      display: flex; align-items: center; justify-content: center;
-      gap: 24px; margin-top: 40px; flex-wrap: wrap;
+    .fin-text .section-title { color: var(--fin-gold); }
+    .fin-synopsis {
+      font-size: 1.05rem;
+      color: rgba(255,249,237,0.85);
+      line-height: 1.8;
+      margin-bottom: 32px;
+      max-width: 480px;
     }
-    .trust-item {
-      display: flex; align-items: center; gap: 8px;
-      font-size: 0.85rem; color: rgba(255,249,237,0.6);
+    .fin-synopsis strong { color: var(--fin-gold); }
+    .btn-fin {
+      display: inline-flex; align-items: center; gap: 12px;
+      background: linear-gradient(135deg, var(--fin-aqua), #0099aa);
+      color: white; font-weight: 900; font-size: 1.1rem;
+      padding: 16px 36px; border-radius: 50px; text-decoration: none;
+      box-shadow: 0 6px 30px rgba(0,201,212,0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
     }
-    .trust-icon { font-size: 1.1rem; }
+    .btn-fin:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(0,201,212,0.6); }
+    .fin-pills { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 32px; }
+    .pill-fin {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(0,201,212,0.1);
+      border: 1.5px solid rgba(0,201,212,0.25);
+      color: var(--fin-aqua);
+      font-size: 0.83rem; font-weight: 700;
+      padding: 7px 16px; border-radius: 50px;
+    }
 
-    /* ═══ FOOTER ═══ */
+    /* === AUTHOR === */
+    .author-section {
+      background: #040810;
+      text-align: center;
+      padding: 90px 5%;
+    }
+    .author-inner { max-width: 700px; margin: 0 auto; }
+    .author-avatar {
+      width: 110px; height: 110px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--sitr-indigo), var(--sitr-gold));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2.8rem;
+      margin: 0 auto 24px;
+      border: 3px solid var(--sitr-gold);
+      box-shadow: 0 0 40px rgba(245,184,0,0.2);
+    }
+    .author-name { font-family: &#39;Fredoka One&#39;, cursive; font-size: 1.8rem; color: var(--sitr-gold); margin-bottom: 6px; }
+    .author-role { font-size: 0.9rem; color: var(--sitr-rain); font-weight: 700; margin-bottom: 22px; }
+    .author-bio { font-size: 1rem; color: rgba(255,249,237,0.68); line-height: 1.85; }
+    .author-bio em { color: rgba(255,249,237,0.85); }
+    .books-mini {
+      display: flex; gap: 20px; justify-content: center;
+      margin-top: 44px; flex-wrap: wrap;
+    }
+    .book-mini {
+      background: rgba(255,255,255,0.05);
+      border: 1.5px solid rgba(255,255,255,0.1);
+      border-radius: 16px; padding: 16px 24px;
+      text-decoration: none; color: inherit;
+      font-size: 0.88rem; font-weight: 700;
+      transition: border-color 0.2s, transform 0.2s;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .book-mini:hover { border-color: var(--sitr-gold); transform: translateY(-4px); }
+    .book-mini span { font-size: 1.5rem; }
+
+    /* === FOOTER === */
     footer {
-      background: #040f17;
+      background: #02050a;
       text-align: center;
       padding: 32px 5%;
       font-size: 0.85rem;
-      color: rgba(255,249,237,0.3);
+      color: rgba(255,249,237,0.28);
     }
-    footer a { color: var(--aqua); text-decoration: none; }
-    footer a:hover { color: var(--gold); }
+    footer a { color: var(--sitr-rain); text-decoration: none; }
+    footer a:hover { color: var(--sitr-gold); }
 
-    /* ═══ SCROLL ANIMATIONS ═══ */
-    .fade-up {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-    .fade-up.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    /* === LIGHTBOX === */
+    .lightbox { display: none; position: fixed; inset: 0; z-index: 9999; background: rgba(0,0,0,0.93); align-items: center; justify-content: center; cursor: zoom-out; }
+    .lightbox.open { display: flex; }
+    .lightbox img { max-width: 85vw; max-height: 85vh; border-radius: 14px; box-shadow: 0 20px 80px rgba(0,0,0,0.8); }
+    .lightbox-close { position: fixed; top: 20px; right: 28px; font-size: 2rem; color: white; cursor: pointer; z-index: 10000; }
 
-    /* ═══ RESPONSIVE ═══ */
+    /* === SCROLL ANIM === */
+    .fade-up { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 900px) {
+      .nav-links .nav-link:not(:last-child) { display: none; }
+    }
     @media (max-width: 768px) {
       .hero-inner { grid-template-columns: 1fr; gap: 40px; text-align: center; }
       .hero-cover { order: -1; }
       .hero-btns { justify-content: center; }
-      .hero-stars { justify-content: center; }
-      .about-inner { grid-template-columns: 1fr; }
-      .chars-grid { grid-template-columns: 1fr; max-width: 340px; }
-      .gallery-grid { grid-template-columns: 1fr 1fr; }
-      .gallery-item.featured { grid-column: span 2; }
-      .lessons-grid { grid-template-columns: 1fr; max-width: 400px; }
+      .hero-social { justify-content: center; }
+      .sitr-story-grid { grid-template-columns: 1fr; }
+      .gallery-strip-grid { grid-template-columns: 1fr 1fr; }
+      .strip-item.wide { grid-column: span 2; }
+      .fintastic-inner { grid-template-columns: 1fr; text-align: center; }
+      .fin-cover { order: -1; }
+      .fin-pills { justify-content: center; }
     }
   </style>
 </head>
 <body>
 
-<!-- ══ STICKY NAV ══ -->
+<!-- NAV -->
 <nav>
-  <a href="/blog/" class="nav-blog" style="color:rgba(255,255,255,0.75);text-decoration:none;font-weight:700;font-size:0.9rem;transition:color 0.2s">Blog</a>
-  <a href="#" class="nav-logo">🐠 Fintastic <span>Day</span></a>
-  <a href="https://www.amazon.com/Fintastic-Aquarium-Adventures-Laidee-Mills/dp/B0FYCGVNM1/ref=sr_1_1?sr=8-1" target="_blank" rel="noopener" class="nav-cta">
-    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
-    Buy on Amazon
-  </a>
+  <a href="/" class="nav-brand">&#x1F981; Guinea <span>Padre</span></a>
+  <div class="nav-links">
+    <a href="/fintastic/" class="nav-link">&#x1F420; Fintastic Day</a>
+    <a href="/blog/" class="nav-link">Blog</a>
+    <a href="https://www.amazon.com/dp/B0GPWTGNMG" target="_blank" rel="noopener" class="nav-cta">&#x1F6D2; Buy on Amazon</a>
+  </div>
 </nav>
 
-<!-- ══ HERO ══ -->
+<!-- ════ HERO: THE SUN IN THE RAIN ════ -->
 <section class="hero">
-  <!-- Bubbles -->
-  <div class="bubbles" id="bubbles"></div>
+  <div class="rain-wrap" id="rain"></div>
+  <div class="sun-glow"></div>
 
   <div class="hero-inner">
-    <div class="hero-text">
-      <div class="hero-badge">✨ Now Available on Amazon</div>
-      <h1 class="hero-title">A Fintastic Day<br><span class="aqua">at the Aquarium</span></h1>
-      <p class="hero-subtitle">The Adventures of Laidee and Mills &bull; by Guinea Padre</p>
+    <div class="hero-text fade-up">
+      <div class="hero-eyebrow">
+        <span class="hero-badge-new">&#x2728; New Release</span>
+        <span class="hero-badge-series">The Adventures of Laidee &amp; Mills &bull; Book 2</span>
+      </div>
+      <h1 class="hero-title">
+        <span class="the">The</span>
+        <span class="sun">Sun</span>
+        <span class="in"> in the </span>
+        <span class="rain">Rain</span>
+      </h1>
+      <p class="hero-author">by Guinea Padre</p>
       <p class="hero-synopsis">
-        Two sisters dive into a world of <strong>colorful fish, playful sea otters,</strong> and floating jellyfish — 
-        but when traffic, hiding ducks, and a frustrated little Mills threaten to ruin the day, 
-        their mom teaches them something truly magical: <strong>the serenity to let go of what you cannot control.</strong>
+        Laidee and Mills are ready for a perfect summer day &mdash; but the clouds had other plans.
+        When the rain arrives uninvited, it takes <strong>a little patience, a warm blanket, and Mommy&#39;s gentle wisdom</strong>
+        to discover that sometimes the most beautiful moments bloom right inside the storm.
       </p>
       <div class="hero-btns">
-        <a href="https://www.amazon.com/Fintastic-Aquarium-Adventures-Laidee-Mills/dp/B0FYCGVNM1/ref=sr_1_1?sr=8-1" target="_blank" rel="noopener" class="btn-primary">
-          🛒 Get It on Amazon
-        </a>
-        <a href="#preview" class="btn-secondary">
-          📖 Preview Inside
+        <a href="https://www.amazon.com/dp/B0GPWTGNMG" target="_blank" rel="noopener" class="btn-amazon">
+          &#x1F6D2; Order Paperback on Amazon
         </a>
       </div>
-      <div class="hero-stars">
-        <span class="stars">★★★★★</span>
-        <span>A picture book families will reach for again and again</span>
+      <div style="margin-top:12px">
+        <a href="https://www.amazon.com/Sun-Rain-Adventures-Laidee-Mills-ebook/dp/B0GPSZV866" target="_blank" rel="noopener" class="btn-kindle">Also available on Kindle</a>
+      </div>
+      <div class="hero-social">
+        <span class="star-row">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</span>
+        <span class="star-label">A story your family will reach for on every rainy day</span>
       </div>
     </div>
-    <div class="hero-cover">
-      <div class="cover-glow"></div>
-      <img src="assets/cover-1.png" alt="A Fintastic Day at the Aquarium book cover" loading="eager">
-      <div class="age-badge">Ages 3–8 📚</div>
+    <div class="hero-cover fade-up">
+      <div class="cover-sun-glow"></div>
+      <img src="assets/sun/cover.png" alt="The Sun in the Rain book cover" loading="eager">
+      <div class="age-badge">Ages 3&ndash;8 &#x1F4DA;</div>
     </div>
   </div>
 </section>
 
 <!-- Wave -->
 <div class="wave">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 80" preserveAspectRatio="none">
-    <path fill="#FFF9ED" d="M0,32L60,37.3C120,43,240,53,360,53.3C480,53,600,43,720,37.3C840,32,960,32,1080,37.3C1200,43,1320,53,1380,58.7L1440,64L1440,80L0,80Z"/>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 90" preserveAspectRatio="none">
+    <path fill="#1a1035" d="M0,40L60,46.7C120,53,240,67,360,68C480,69,600,57,720,49.3C840,41,960,41,1080,47.3C1200,53,1320,67,1380,73.3L1440,80L1440,90L0,90Z"/>
   </svg>
 </div>
 
-<!-- ══ ABOUT ══ -->
-<section class="about-section">
-  <div class="about-inner">
+<!-- ════ SITR: THE STORY ════ -->
+<section class="sitr-gallery-section">
+  <div class="sitr-story-grid">
     <div class="fade-up">
-      <p class="section-label">The Story</p>
-      <h2 class="section-title">An Adventure That Teaches Little Hearts</h2>
+      <p class="section-label gold">The Story</p>
+      <h2 class="section-title" style="color:var(--sitr-gold)">When the Sky Has Other Plans</h2>
       <p class="section-desc">
-        Laidee and Mills are bursting with excitement on their way to the aquarium. 
-        But plans don't always go the way we hope. Traffic jams. Hiding ducks. 
-        A little sister starting to stir.
+        Laidee and Mills wake up buzzing with excitement, sunshine in their hearts and outdoor adventures dancing in their heads.
+        But when the rain taps softly on the windowpane, everything feels like it might fall apart.
       </p>
       <p class="section-desc" style="margin-top:16px">
-        That's when Mommy shares her secret — a beautiful lesson about the difference between 
-        what we can control and what we simply must release. Told through wonder, laughter, 
-        and the dazzling magic of the aquarium, this book will stay in your family's heart long after the last page.
+        That&#39;s when Mommy pulls them close and shares a secret: <strong style="color:var(--sitr-gold)">sometimes what seems like a ruined day holds hidden gifts.</strong>
+        With warmth, wonder, and the coziness of staying in, this is a story about learning to love what you have &mdash;
+        even when it&#39;s raining.
       </p>
-      <div class="lesson-pills">
-        <span class="pill">🌊 Emotional Regulation</span>
-        <span class="pill">🙏 The Serenity Prayer</span>
-        <span class="pill">🐟 Nature & Wonder</span>
-        <span class="pill">👶 Big & Little Sisters</span>
-        <span class="pill">💛 Family Bonds</span>
-        <span class="pill">🌈 Self-Discovery</span>
+      <div class="sitr-pills">
+        <span class="pill">&#x2600;&#xFE0F; Finding Joy in the Unexpected</span>
+        <span class="pill rain">&#x1F327;&#xFE0F; Embracing Change</span>
+        <span class="pill">&#x1F917; Gratitude &amp; Contentment</span>
+        <span class="pill rain">&#x1F4A7; Emotional Resilience</span>
+        <span class="pill">&#x1F46A; Family Togetherness</span>
       </div>
     </div>
-    <div class="about-pages fade-up">
-      <img src="assets/page-03.png" alt="Laidee and Mills in the car" onclick="openLight(this.src)" loading="lazy">
-      <img src="assets/page-05.png" alt="Interior page spread" onclick="openLight(this.src)" loading="lazy">
-      <img src="assets/page-07.png" alt="Mommy driving" onclick="openLight(this.src)" loading="lazy">
+    <div class="sitr-pages fade-up">
+      <img src="assets/sun/page-08.png" alt="Sun in the Rain interior spread" onclick="openLight(this.src)" loading="lazy">
+      <img src="assets/sun/page-12.png" alt="Sun in the Rain interior spread" onclick="openLight(this.src)" loading="lazy">
+      <img src="assets/sun/page-17.png" alt="Sun in the Rain interior spread" onclick="openLight(this.src)" loading="lazy">
     </div>
   </div>
 </section>
 
 <!-- Wave -->
-<div class="wave" style="background:#FFF9ED">
+<div class="wave" style="background:#1a1035">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 80" preserveAspectRatio="none">
-    <path fill="#0B2F45" d="M0,48L60,42.7C120,37,240,27,360,26.7C480,27,600,37,720,42.7C840,48,960,48,1080,42.7C1200,37,1320,27,1380,21.3L1440,16L1440,80L0,80Z"/>
+    <path fill="#0f0a1e" d="M0,40L80,34.7C160,29,320,19,480,18.7C640,19,800,29,960,34.7C1120,40,1280,40,1360,40L1440,40L1440,80L0,80Z"/>
   </svg>
 </div>
 
-<!-- ══ CHARACTERS ══ -->
-<section class="chars-section">
+<!-- ════ SITR GALLERY STRIP ════ -->
+<section class="gallery-strip">
   <div style="text-align:center" class="fade-up">
-    <p class="section-label">Meet the Characters</p>
-    <h2 class="section-title">The Ones You'll Fall in Love With</h2>
+    <p class="section-label gold">Inside the Book</p>
+    <h2 class="section-title" style="color:var(--sitr-gold)">A Peek Inside the Pages &#x2728;</h2>
+    <p class="section-desc" style="margin:0 auto;text-align:center">Golden light and rainy-day magic on every spread &mdash; illustrations that make the coziest afternoons feel like the greatest adventures.</p>
   </div>
-  <div class="chars-grid">
-    <div class="char-card fade-up">
-      <div class="char-img-wrap">
-        <img src="assets/page-04.png" alt="Laidee" loading="lazy">
+  <div class="gallery-strip-grid">
+    <div class="strip-item wide fade-up" onclick="openLight(&#39;assets/sun/cover.png&#39;)"><img src="assets/sun/cover.png" alt="Sun in the Rain cover" loading="lazy"></div>
+    <div class="strip-item fade-up" onclick="openLight(&#39;assets/sun/page-03.png&#39;)"><img src="assets/sun/page-03.png" alt="Interior page" loading="lazy"></div>
+    <div class="strip-item fade-up" onclick="openLight(&#39;assets/sun/page-05.png&#39;)"><img src="assets/sun/page-05.png" alt="Interior page" loading="lazy"></div>
+    <div class="strip-item fade-up" onclick="openLight(&#39;assets/sun/page-10.png&#39;)"><img src="assets/sun/page-10.png" alt="Interior page" loading="lazy"></div>
+    <div class="strip-item fade-up" onclick="openLight(&#39;assets/sun/page-14.png&#39;)"><img src="assets/sun/page-14.png" alt="Interior page" loading="lazy"></div>
+    <div class="strip-item fade-up" onclick="openLight(&#39;assets/sun/page-19.png&#39;)"><img src="assets/sun/page-19.png" alt="Interior page" loading="lazy"></div>
+    <div class="strip-item wide fade-up" onclick="openLight(&#39;assets/sun/page-22.png&#39;)"><img src="assets/sun/page-22.png" alt="Interior page" loading="lazy"></div>
+    <div class="strip-item fade-up" onclick="openLight(&#39;assets/sun/page-25.png&#39;)"><img src="assets/sun/page-25.png" alt="Interior page" loading="lazy"></div>
+  </div>
+</section>
+
+<!-- ════ SITR BUY CTA ════ -->
+<section class="sitr-cta">
+  <div class="sitr-cta-inner fade-up">
+    <p class="section-label gold" style="display:block;text-align:center">&#x1F4D6; Available Now in Paperback</p>
+    <h2 class="sitr-cta-title">Give Them the Gift of a Rainy Day Story</h2>
+    <p class="sitr-cta-desc">
+      Perfect for bedtime, rainy afternoons, or any moment your little one needs a reminder
+      that life&#39;s most beautiful surprises sometimes arrive wearing raindrops.
+      <strong style="color:var(--sitr-gold)">The Sun in the Rain</strong> — the newest adventure from Guinea Padre.
+    </p>
+    <div class="sitr-cta-btns">
+      <a href="https://www.amazon.com/dp/B0GPWTGNMG" target="_blank" rel="noopener" class="btn-sitr-main">
+        &#x1F6D2; &nbsp; Order on Amazon Now
+      </a>
+      <div class="sitr-trust">
+        <div class="trust-item">&#x2B50; Paperback Edition</div>
+        <div class="trust-item">&#x1F4E6; Amazon Prime Eligible</div>
+        <div class="trust-item">&#x1F381; Perfect Gift for Kids</div>
+        <div class="trust-item">&#x1F4DA; SEL Picture Book</div>
       </div>
-      <div class="char-name">Laidee 🌸</div>
-      <p class="char-desc">The caring big sister with a blue flower in her hair and a heart full of wonder. She watches out for Mills and soaks in every aquarium moment.</p>
-    </div>
-    <div class="char-card fade-up">
-      <div class="char-img-wrap">
-        <img src="assets/page-08.png" alt="Mills" loading="lazy">
-      </div>
-      <div class="char-name">Mills 🎀</div>
-      <p class="char-desc">The adorable baby sister in her cozy pink onesie. When things don't go as planned, Mills feels it deeply — but she's learning too.</p>
-    </div>
-    <div class="char-card fade-up">
-      <div class="char-img-wrap">
-        <img src="assets/page-05.png" alt="Mommy" loading="lazy">
-      </div>
-      <div class="char-name">Mommy 💛</div>
-      <p class="char-desc">Wise, warm, and always ready with just the right words. Behind the wheel with her golden braid and straw hat, she turns a hard moment into a life lesson.</p>
+      <p style="margin-top:8px;font-size:0.8rem;color:rgba(255,249,237,0.3)">
+        Prefer digital? <a href="https://www.amazon.com/Sun-Rain-Adventures-Laidee-Mills-ebook/dp/B0GPSZV866" target="_blank" rel="noopener" style="color:rgba(126,184,212,0.6);text-decoration:none;">Kindle edition also available</a>
+      </p>
     </div>
   </div>
 </section>
 
-<!-- Wave -->
-<div class="wave" style="background:#0B2F45">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 80" preserveAspectRatio="none">
-    <path fill="#061f2e" d="M0,16L60,21.3C120,27,240,37,360,42.7C480,48,600,48,720,42.7C840,37,960,27,1080,21.3C1200,16,1320,16,1380,16L1440,16L1440,80L0,80Z"/>
-  </svg>
-</div>
-
-<!-- ══ GALLERY ══ -->
-<section class="gallery-section" id="preview">
-  <div style="text-align:center" class="fade-up">
-    <p class="section-label">Inside the Book</p>
-    <h2 class="section-title">A Peek Inside the Pages ✨</h2>
-    <p class="section-desc center-text" style="margin:0 auto">Vibrant, cinematic illustrations on every spread — crafted to spark wonder and draw every child deeper into the story.</p>
-  </div>
-  <div class="gallery-grid">
-    <div class="gallery-item featured fade-up" onclick="openLight('assets/cover-1.png')"><img src="assets/cover-1.png" alt="Cover spread" loading="lazy"></div>
-    <div class="gallery-item fade-up" onclick="openLight('assets/page-04.png')"><img src="assets/page-04.png" alt="Page preview" loading="lazy"></div>
-    <div class="gallery-item fade-up" onclick="openLight('assets/page-06.png')"><img src="assets/page-06.png" alt="Page preview" loading="lazy"></div>
-    <div class="gallery-item fade-up" onclick="openLight('assets/page-07.png')"><img src="assets/page-07.png" alt="Page preview" loading="lazy"></div>
-    <div class="gallery-item fade-up" onclick="openLight('assets/page-08.png')"><img src="assets/page-08.png" alt="Page preview" loading="lazy"></div>
-    <div class="gallery-item fade-up" onclick="openLight('assets/page-09.png')"><img src="assets/page-09.png" alt="Page preview" loading="lazy"></div>
-  </div>
-</section>
-
-<!-- Wave -->
-<div class="wave" style="background:#061f2e">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 80" preserveAspectRatio="none">
-    <path fill="#0d4f6e" d="M0,64L60,58.7C120,53,240,43,360,37.3C480,32,600,32,720,37.3C840,43,960,53,1080,58.7C1200,64,1320,64,1380,64L1440,64L1440,0L0,0Z"/>
-  </svg>
-</div>
-
-<!-- ══ LESSONS ══ -->
-<section class="lessons-section">
-  <div style="text-align:center" class="fade-up">
-    <p class="section-label">Why Parents Love It</p>
-    <h2 class="section-title">Lessons That Last a Lifetime</h2>
-    <p class="section-desc center-text" style="margin:0 auto 0">More than a story — a conversation starter for families navigating big feelings together.</p>
-  </div>
-  <div class="lessons-grid">
-    <div class="lesson-card fade-up">
-      <div class="lesson-icon">🌊</div>
-      <div class="lesson-title">Let Go & Flow</div>
-      <p class="lesson-text">Children learn to identify what is and isn't in their control — a foundational SEL skill that reduces anxiety for life.</p>
-    </div>
-    <div class="lesson-card fade-up">
-      <div class="lesson-icon">😤→😊</div>
-      <div class="lesson-title">Frustration Is Normal</div>
-      <p class="lesson-text">Mills's frustration is validated, not shamed. Kids see themselves and learn that feelings are okay — it's how we respond that matters.</p>
-    </div>
-    <div class="lesson-card fade-up">
-      <div class="lesson-icon">🙏</div>
-      <div class="lesson-title">The Serenity Prayer</div>
-      <p class="lesson-text">Woven naturally into the story — not preachy, but profound. A gift children will carry into adulthood.</p>
-    </div>
-    <div class="lesson-card fade-up">
-      <div class="lesson-icon">👨‍👩‍👧‍👦</div>
-      <div class="lesson-title">Family Is the Anchor</div>
-      <p class="lesson-text">Mommy's calm presence models healthy emotional regulation. Readers see a parent as safe harbor during stormy feelings.</p>
-    </div>
-    <div class="lesson-card fade-up">
-      <div class="lesson-icon">🐠</div>
-      <div class="lesson-title">Nature's Healing Magic</div>
-      <p class="lesson-text">The aquarium world — otters, jellyfish, colorful fish — shows how wonder in nature can reset a frustrated heart.</p>
-    </div>
-    <div class="lesson-card fade-up">
-      <div class="lesson-icon">💪</div>
-      <div class="lesson-title">Choose Your Reaction</div>
-      <p class="lesson-text">'It's always okay to choose how you react.'  A powerful message of personal agency that empowers children of all ages.</p>
-    </div>
-  </div>
-</section>
-
-<!-- Wave -->
-<div class="wave" style="background:linear-gradient(135deg, #0d4f6e, #0B2F45)">
+<!-- DIVIDER WAVE -->
+<div class="wave" style="background:radial-gradient(ellipse at 50% 60%,rgba(45,27,107,.8),#0f0a1e 70%)">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 80" preserveAspectRatio="none">
     <path fill="#FFF9ED" d="M0,48L80,42.7C160,37,320,27,480,26.7C640,27,800,37,960,42.7C1120,48,1280,48,1360,48L1440,48L1440,80L0,80Z"/>
   </svg>
 </div>
 
-<!-- ══ SERENITY QUOTE ══ -->
-<section class="quote-section">
-  <div class="fade-up">
-    <p class="serenity-quote" style="color:#0d4f6e">
-      <span class="quote-mark">&ldquo;</span>
-      Grant me the serenity to accept the things I cannot change, 
-      the courage to change the things I can, 
-      and the wisdom to know the difference.
-      <span class="quote-mark">&rdquo;</span>
-      <em>— The Serenity Prayer, as Mommy teaches Laidee and Mills</em>
-    </p>
-  </div>
-</section>
-
-<!-- Wave -->
-<div class="wave" style="background:#FFF9ED">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 80" preserveAspectRatio="none">
-    <path fill="#061f2e" d="M0,32L80,37.3C160,43,320,53,480,56C640,59,800,53,960,45.3C1120,37,1280,27,1360,21.3L1440,16L1440,80L0,80Z"/>
-  </svg>
+<!-- ════ ALSO BY DIVIDER ════ -->
+<div class="books-divider">
+  <p class="divider-label">Also by Guinea Padre</p>
+  <p class="divider-sub">The Adventures of Laidee and Mills &bull; Book 1</p>
 </div>
 
-<!-- ══ AUTHOR ══ -->
-<section class="author-section">
-  <div class="author-inner fade-up">
-    <div class="author-avatar">🦁</div>
-    <div class="author-name">Guinea Padre</div>
-    <div class="author-role">Children's Book Author &bull; The Adventures of Laidee and Mills</div>
-    <p class="author-bio">
-      Guinea Padre is a celebrated children's book author specializing in Social-Emotional Learning. 
-      With a warm, imaginative storytelling style reminiscent of classics like <em>Charlotte's Web</em> 
-      and <em>The Velveteen Rabbit</em>, Guinea Padre creates stories that validate difficult emotions, 
-      celebrate family bonds, and leave every child with a heart full of hope.
-    </p>
-    <p class="author-bio" style="margin-top:16px">
-      <em>&ldquo;Children understand more than adults give them credit for. My stories meet them exactly where they are.&rdquo;</em>
-    </p>
-  </div>
-</section>
-
-<!-- ══ CTA ══ -->
-<section class="cta-section">
-  <div class="cta-inner fade-up">
-    <p class="cta-pretitle">🐠 Available Now on Amazon</p>
-    <h2 class="cta-title">Ready to Dive Into the Adventure?</h2>
-    <p class="cta-desc">
-      Give your child the gift of wonder, emotional wisdom, and a story they'll beg to hear 
-      again and again. <strong style="color:var(--gold)">A Fintastic Day at the Aquarium</strong> 
-      is waiting to become a beloved part of your family's bookshelf.
-    </p>
-    <a href="https://www.amazon.com/Fintastic-Aquarium-Adventures-Laidee-Mills/dp/B0FYCGVNM1/ref=sr_1_1?sr=8-1" target="_blank" rel="noopener" class="cta-btn">
-      🛒 &nbsp; Order on Amazon Now
-    </a>
-    <p class="cta-sub">Ships fast &bull; Free with Prime &bull; Perfect for ages 3–8</p>
-    <div class="cta-trust">
-      <div class="trust-item"><span class="trust-icon">⭐</span> Highly Rated</div>
-      <div class="trust-item"><span class="trust-icon">📦</span> Amazon Prime Eligible</div>
-      <div class="trust-item"><span class="trust-icon">🎁</span> Perfect Gift for Kids</div>
-      <div class="trust-item"><span class="trust-icon">📚</span> SEL Picture Book</div>
+<!-- ════ FINTASTIC SECTION ════ -->
+<section class="fintastic-section">
+  <div class="fintastic-inner">
+    <div class="fin-cover fade-up">
+      <div class="fin-glow"></div>
+      <img src="assets/cover-1.png" alt="A Fintastic Day at the Aquarium book cover" loading="lazy">
+    </div>
+    <div class="fin-text fade-up">
+      <p class="section-label aqua">Book 1 &bull; Now Available</p>
+      <h2 class="section-title" style="color:var(--fin-gold)">A Fintastic Day<br>at the Aquarium</h2>
+      <p class="fin-synopsis">
+        Laidee and Mills visit the aquarium, but when traffic, hiding ducks, and a frustrated Mills
+        threaten to ruin the day, Mommy teaches them the most beautiful secret:
+        <strong>the serenity to let go of what you cannot control.</strong>
+      </p>
+      <div class="fin-pills">
+        <span class="pill-fin">&#x1F30A; Serenity Prayer for Kids</span>
+        <span class="pill-fin">&#x1F420; Aquarium Adventure</span>
+        <span class="pill-fin">&#x1F64F; Emotional Regulation</span>
+      </div>
+      <a href="/fintastic/" class="btn-fin">&#x1F420; Explore This Book</a>
+      <p style="margin-top:16px">
+        <a href="https://www.amazon.com/Fintastic-Aquarium-Adventures-Laidee-Mills/dp/B0FYCGVNM1/ref=sr_1_1?sr=8-1" target="_blank" rel="noopener" style="font-size:0.88rem;color:rgba(255,249,237,0.4);text-decoration:none;">Or buy directly on Amazon &rarr;</a>
+      </p>
     </div>
   </div>
 </section>
 
-<!-- ══ FOOTER ══ -->
+<!-- Wave -->
+<div class="wave" style="background:radial-gradient(ellipse at 40% 50%,#1a7fa0,#0B2F45 100%)">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 80" preserveAspectRatio="none">
+    <path fill="#040810" d="M0,32L80,37.3C160,43,320,53,480,56C640,59,800,53,960,45.3C1120,37,1280,27,1360,21.3L1440,16L1440,80L0,80Z"/>
+  </svg>
+</div>
+
+<!-- ════ AUTHOR ════ -->
+<section class="author-section">
+  <div class="author-inner fade-up">
+    <div class="author-avatar">&#x1F981;</div>
+    <div class="author-name">Guinea Padre</div>
+    <div class="author-role">Children&#39;s Book Author &bull; The Adventures of Laidee and Mills</div>
+    <p class="author-bio">
+      Guinea Padre is a children&#39;s book author with a gift for meeting little hearts exactly where they are.
+      Through the eyes of Laidee and Mills, these books explore the big emotions of childhood
+      with warmth, wonder, and the kind of wisdom that stays with a child long after the final page.
+    </p>
+    <p class="author-bio" style="margin-top:18px">
+      <em>&ldquo;Children understand more than we give them credit for. My stories are a bridge between what they feel and what they can carry with them for life.&rdquo;</em>
+    </p>
+    <div class="books-mini">
+      <a href="https://www.amazon.com/dp/B0GPWTGNMG" target="_blank" rel="noopener" class="book-mini" style="border-color:rgba(245,184,0,0.3)">
+        <span>&#x2600;&#xFE0F;</span>
+        <div style="text-align:left">
+          <div style="color:var(--sitr-gold);font-size:0.95rem">The Sun in the Rain</div>
+          <div style="font-size:0.75rem;color:rgba(255,255,255,0.35);font-weight:600">Book 2 &bull; New Release</div>
+        </div>
+      </a>
+      <a href="/fintastic/" class="book-mini" style="border-color:rgba(0,201,212,0.3)">
+        <span>&#x1F420;</span>
+        <div style="text-align:left">
+          <div style="color:var(--fin-aqua);font-size:0.95rem">A Fintastic Day at the Aquarium</div>
+          <div style="font-size:0.75rem;color:rgba(255,255,255,0.35);font-weight:600">Book 1 &bull; Available Now</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ════ FOOTER ════ -->
 <footer>
-  <p>© 2025 Guinea Padre &bull; The Adventures of Laidee and Mills</p>
-  <p style="margin-top:8px">
-    <a href="https://www.amazon.com/Fintastic-Aquarium-Adventures-Laidee-Mills/dp/B0FYCGVNM1/ref=sr_1_1?sr=8-1" target="_blank" rel="noopener">Buy on Amazon</a>
-    &bull; Made with 💛 for little hearts everywhere
+  <p>&copy; 2025 Guinea Padre &bull; The Adventures of Laidee and Mills</p>
+  <p style="margin-top:10px">
+    <a href="https://www.amazon.com/dp/B0GPWTGNMG" target="_blank" rel="noopener">The Sun in the Rain</a>
+    &bull;
+    <a href="/fintastic/">A Fintastic Day at the Aquarium</a>
+    &bull;
+    <a href="/blog/">Blog</a>
+    &bull; Made with &#x2600;&#xFE0F;&#x1F327;&#xFE0F; for little hearts everywhere
   </p>
 </footer>
 
 <!-- Lightbox -->
 <div class="lightbox" id="lightbox" onclick="closeLight()">
-  <div class="lightbox-close" onclick="closeLight()">✕</div>
-  <img id="lightbox-img" src="" alt="Book preview">
+  <div class="lightbox-close" onclick="closeLight()">&#x2715;</div>
+  <img id="lightbox-img" src="" alt="Book page preview">
 </div>
 
 <script>
-  // ─ Bubbles
-  const bubblesEl = document.getElementById('bubbles');
-  for (let i = 0; i < 22; i++) {
-    const b = document.createElement('div');
-    b.className = 'bubble';
-    const size = 8 + Math.random() * 36;
-    b.style.cssText = `
-      width: ${size}px; height: ${size}px;
-      left: ${Math.random() * 100}%;
-      animation-duration: ${6 + Math.random() * 10}s;
-      animation-delay: ${Math.random() * -12}s;
-    `;
-    bubblesEl.appendChild(b);
+  // Rain animation
+  const rainWrap = document.getElementById(&#39;rain&#39;);
+  for (let i = 0; i < 60; i++) {
+    const d = document.createElement(&#39;div&#39;);
+    d.className = &#39;raindrop&#39;;
+    const h = 40 + Math.random() * 80;
+    d.style.cssText = `left:${Math.random()*100}%;height:${h}px;animation-duration:${0.6+Math.random()*0.8}s;animation-delay:${Math.random()*-2}s;opacity:${0.3+Math.random()*0.4}`;
+    rainWrap.appendChild(d);
   }
 
-  // ─ Lightbox
+  // Lightbox
   function openLight(src) {
-    document.getElementById('lightbox-img').src = src;
-    document.getElementById('lightbox').classList.add('open');
-    document.body.style.overflow = 'hidden';
+    document.getElementById(&#39;lightbox-img&#39;).src = src;
+    document.getElementById(&#39;lightbox&#39;).classList.add(&#39;open&#39;);
+    document.body.style.overflow = &#39;hidden&#39;;
   }
   function closeLight() {
-    document.getElementById('lightbox').classList.remove('open');
-    document.body.style.overflow = '';
+    document.getElementById(&#39;lightbox&#39;).classList.remove(&#39;open&#39;);
+    document.body.style.overflow = &#39;&#39;;
   }
-  document.addEventListener('keydown', e => e.key === 'Escape' && closeLight());
-  document.getElementById('lightbox').addEventListener('click', function(e) {
-    if (e.target === this) closeLight();
-  });
+  document.addEventListener(&#39;keydown&#39;, e => e.key === &#39;Escape&#39; && closeLight());
 
-  // ─ Scroll fade-up
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('visible'); }
-    });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+  // Scroll fade-up
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add(&#39;visible&#39;); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll(&#39;.fade-up&#39;).forEach(el => obs.observe(el));
 </script>
-
 </body>
 </html>
