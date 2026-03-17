@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://guineapadre.shop/sitemap.xml
