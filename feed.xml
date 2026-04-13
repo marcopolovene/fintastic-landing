@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Guinea Padre — Children's Books &amp; SEL</title>
+  <subtitle>Social-emotional learning picture books for ages 3-8. The Sun in the Rain &amp; A Fintastic Day at the Aquarium.</subtitle>
+  <link href="https://guineapadre.shop/feed.xml" rel="self"/>
+  <link href="https://guineapadre.shop/" rel="alternate"/>
+  <id>https://guineapadre.shop/</id>
+  <updated>2026-04-13T00:00:00Z</updated>
+  <author>
+    <name>Guinea Padre</name>
+    <email>Guineapadre@gmail.com</email>
+  </author>
+  <rights>Copyright 2026 Guinea Padre</rights>
+  <category term="Children's Books"/>
+  <category term="SEL"/>
+  <category term="Picture Books"/>
+  <generator uri="https://guineapadre.shop">Guinea Padre Blog</generator>
+
+  <!-- Pillar Guides -->
+  <entry>
+    <title>Ultimate Guide to Ocean Books for Kids</title>
+    <link href="https://guineapadre.shop/blog/ultimate-guide-ocean-books-kids.html" rel="alternate"/>
+    <id>urn:uuid:ocean-books-guide</id>
+    <updated>2026-04-09T00:00:00Z</updated>
+    <summary>Your comprehensive guide to the best ocean-themed children’s books — from picture books to educational reads for ages 3-8.</summary>
+    <category term="ocean"/><category term="picture books"/><category term="guide"/>
+  </entry>
+  <entry>
+    <title>Rainy Day Books &amp; Activities for Kids — Complete Guide</title>
+    <link href="https://guineapadre.shop/blog/rainy-day-books-activities-kids-complete-guide.html" rel="alternate"/>
+    <id>urn:uuid:rainy-day-guide</id>
+    <updated>2026-04-09T00:00:00Z</updated>
+    <summary>The complete guide to rainy day books and indoor activities for kids ages 3-8. Cozy read-alouds, crafts, and SEL moments.</summary>
+    <category term="rainy day"/><category term="activities"/><category term="guide"/>
+  </entry>
+  <entry>
+    <title>Ocean Animals Picture Books — Learning Guide</title>
+    <link href="https://guineapadre.shop/blog/ocean-animals-picture-books-learning-guide.html" rel="alternate"/>
+    <id>urn:uuid:ocean-animals-guide</id>
+    <updated>2026-04-09T00:00:00Z</updated>
+    <summary>Explore ocean animals through picture books! A learning guide for parents and teachers with SEL connections.</summary>
+    <category term="ocean animals"/><category term="learning"/><category term="guide"/>
+  </entry>
+  <entry>
+    <title>Raising Ocean-Loving Kids — Complete Guide</title>
+    <link href="https://guineapadre.shop/blog/raising-ocean-loving-kids-complete-guide.html" rel="alternate"/>
+    <id>urn:uuid:ocean-loving-guide</id>
+    <updated>2026-04-09T00:00:00Z</updated>
+    <summary>How to raise kids who love the ocean — books, activities, and habits that nurture marine appreciation and empathy.</summary>
+    <category term="parenting"/><category term="ocean"/><category term="guide"/>
+  </entry>
+
+  <!-- Book Features -->
+  <entry>
+    <title>The Sun in the Rain — A Children's Book About Finding Joy</title>
+    <link href="https://guineapadre.shop/blog/the-sun-in-the-rain-book.html" rel="alternate"/>
+    <id>urn:uuid:sitr-book</id>
+    <updated>2026-04-09T00:00:00Z</updated>
+    <summary>Discover The Sun in the Rain — a gentle SEL picture book about gratitude, resilience, and finding sunshine on rainy days. Ages 3-8.</summary>
+    <category term="book feature"/><category term="SEL"/><category term="rain"/>
+  </entry>
+  <entry>
+    <title>A Fintastic Day at the Aquarium</title>
+    <link href="https://guineapadre.shop/blog/fintastic-day-at-the-aquarium.html" rel="alternate"/>
+    <id>urn:uuid:fintastic-book</id>
+    <updated>2026-04-09T00:00:00Z</updated>
+    <summary>Dive into A Fintastic Day at the Aquarium — an ocean adventure that teaches kids about emotions, empathy, and marine life. Ages 3-8.</summary>
+    <category term="book feature"/><category term="ocean"/><category term="SEL"/>
+  </entry>
+
+  <!-- Topic Posts -->
+  <entry>
+    <title>Mindfulness Picture Books for Kids</title>
+    <link href="https://guineapadre.shop/blog/mindfulness-picture-books-kids.html" rel="alternate"/>
+    <id>urn:uuid:mindfulness-books</id>
+    <updated>2026-04-09T00:00:00Z</updated>
+    <summary>The best mindfulness picture books for kids ages 3-8 — calm-down corner favorites, breathing exercises, and emotional awareness stories.</summary>
+    <category term="mindfulness"/><category term="SEL"/>
+  </entry>
+  <entry>
+    <title>Best Picture Books for Kindergarten Readiness 2026</title>
+    <link href="https://guineapadre.shop/blog/best-picture-books-kindergarten-readiness-2026.html" rel="alternate"/>
+    <id>urn:uuid:kindergarten-readiness</id>
+    <updated>2026-04-09T00:00:00Z</updated>
+    <summary>Preparing for kindergarten? These picture books build social-emotional skills, empathy, and confidence for the first day of school.</summary>
+    <category term="kindergarten"/><category term="school readiness"/>
+  </entry>
+  <entry>
+    <title>Screen-Free Reading Activities for Kids 2026</title>
+    <link href="https://guineapadre.shop/blog/screen-free-reading-activities-kids-2026.html" rel="alternate"/>
+    <id>urn:uuid:screen-free</id>
+    <updated>2026-04-09T00:00:00Z</updated>
+    <summary>Swap screens for stories! Screen-free reading activities that build emotional intelligence and a love of books.</summary>
+    <category term="screen-free"/><category term="activities"/>
+  </entry>
+  <entry>
+    <title>Spring Break Aquarium Guide for Kids 2026</title>
+    <link href="https://guineapadre.shop/blog/spring-break-aquarium-guide-kids-2026.html" rel="alternate"/>
+    <id>urn:uuid:spring-aquarium</id>
+    <updated>2026-04-09T00:00:00Z</updated>
+    <summary>Plan the perfect spring break aquarium trip! Tips, books, and SEL activities to make it enriching for ages 3-8.</summary>
+    <category term="aquarium"/><category term="spring"/>
+  </entry>
+  <entry>
+    <title>Children's Books About Anxiety</title>
+    <link href="https://guineapadre.shop/blog/childrens-books-about-anxiety.html" rel="alternate"/>
+    <id>urn:uuid:anxiety-books</id>
+    <updated>2026-04-09T00:00:00Z</updated>
+    <summary>Gentle picture books about anxiety for kids ages 3-8. Help children name worries, practice calming strategies, and build resilience.</summary>
+    <category term="anxiety"/><category term="SEL"/>
+  </entry>
+  <entry>
+    <title>Children's Books About Self-Regulation</title>
+    <link href="https://guineapadre.shop/blog/childrens-books-self-regulation.html" rel="alternate"/>
+    <id>urn:uuid:self-regulation</id>
+    <updated>2026-04-09T00:00:00Z</updated>
+    <summary>The best children's books about self-regulation — stories that teach emotional control, breathing, and calm-down strategies.</summary>
+    <category term="self-regulation"/><category term="SEL"/>
+  </entry>
+  <entry>
+    <title>Best Book Gifts for Toddlers</title>
+    <link href="https://guineapadre.shop/blog/best-book-gifts-for-toddlers.html" rel="alternate"/>
+    <id>urn:uuid:toddler-gifts</id>
+    <updated>2026-04-09T00:00:00Z</updated>
+    <summary>Gift-worthy picture books for toddlers ages 3-8 — birthdays, holidays, and just-because surprises that spark joy and empathy.</summary>
+    <category term="gifts"/><category term="toddlers"/>
+  </entry>
+  <entry>
+    <title>Best Picture Books for 4-Year-Olds</title>
+    <link href="https://guineapadre.shop/blog/best-picture-books-4-year-olds.html" rel="alternate"/>
+    <id>urn:uuid:4yo-books</id>
+    <updated>2026-04-09T00:00:00Z</updated>
+    <summary>Top picture books for 4-year-olds — stories about feelings, friendship, and discovery that preschoolers ask for again and again.</summary>
+    <category term="ages 4"/><category term="picture books"/>
+  </entry>
+  <entry>
+    <title>Best Read-Aloud Books for Preschoolers</title>
+    <link href="https://guineapadre.shop/blog/best-read-aloud-books-preschoolers.html" rel="alternate"/>
+    <id>urn:uuid:read-aloud</id>
+    <updated>2026-04-09T00:00:00Z</updated>
+    <summary>The best read-aloud picture books for preschool — engaging stories with SEL themes that teachers and parents love.</summary>
+    <category term="read-aloud"/><category term="preschool"/>
+  </entry>
+  <entry>
+    <title>Books to Help Kids with Big Feelings</title>
+    <link href="https://guineapadre.shop/blog/books-to-help-kids-with-big-feelings.html" rel="alternate"/>
+    <id>urn:uuid:big-feelings</id>
+    <updated>2026-04-09T00:00:00Z</updated>
+    <summary>Picture books that help kids navigate big emotions — anger, sadness, worry — with empathy and practical strategies.</summary>
+    <category term="emotions"/><category term="SEL"/>
+  </entry>
+  <entry>
+    <title>Children's Books About Finding Joy</title>
+    <link href="https://guineapadre.shop/blog/childrens-books-about-finding-joy.html" rel="alternate"/>
+    <id>urn:uuid:finding-joy</id>
+    <updated>2026-04-09T00:00:00Z</updated>
+    <summary>Books that teach children to find joy in everyday moments — gratitude, optimism, and emotional resilience stories.</summary>
+    <category term="joy"/><category term="gratitude"/>
+  </entry>
+  <entry>
+    <title>Children's Books About Trying New Things</title>
+    <link href="https://guineapadre.shop/blog/childrens-books-about-trying-new-things.html" rel="alternate"/>
+    <id>urn:uuid:trying-new</id>
+    <updated>2026-04-09T00:00:00Z</updated>
+    <summary>Encouraging picture books about trying new things — building courage, managing worry, and celebrating growth.</summary>
+    <category term="courage"/><category term="growth"/>
+  </entry>
+  <entry>
+    <title>Children's Books About Weather</title>
+    <link href="https://guineapadre.shop/blog/childrens-books-about-weather.html" rel="alternate"/>
+    <id>urn:uuid:weather-books</id>
+    <updated>2026-04-09T00:00:00Z</updated>
+    <summary>Rain, shine, and storms — picture books that explore weather through an SEL lens. Perfect for curious kids ages 3-8.</summary>
+    <category term="weather"/><category term="SEL"/>
+  </entry>
+  <entry>
+    <title>Empathy Books for Children</title>
+    <link href="https://guineapadre.shop/blog/empathy-books-for-children.html" rel="alternate"/>
+    <id>urn:uuid:empathy-books</id>
+    <updated>2026-04-09T00:00:00Z</updated>
+    <summary>The best empathy picture books for children — stories that foster understanding, compassion, and social awareness.</summary>
+    <category term="empathy"/><category term="SEL"/>
+  </entry>
+  <entry>
+    <title>Ocean Science Picture Books for Kids</title>
+    <link href="https://guineapadre.shop/blog/ocean-science-picture-books-kids.html" rel="alternate"/>
+    <id>urn:uuid:ocean-science</id>
+    <updated>2026-04-09T00:00:00Z</updated>
+    <summary>Ocean science meets SEL! Picture books about marine life, ecosystems, and the wonder of underwater discovery.</summary>
+    <category term="science"/><category term="ocean"/>
+  </entry>
+  <entry>
+    <title>Summer Reading List for Preschoolers 2026</title>
+    <link href="https://guineapadre.shop/blog/summer-reading-list-preschoolers-2026.html" rel="alternate"/>
+    <id>urn:uuid:summer-reading</id>
+    <updated>2026-04-09T00:00:00Z</updated>
+    <summary>The ultimate summer reading list for preschoolers — ocean adventures, rainy day reads, and SEL stories for ages 3-8.</summary>
+    <category term="summer"/><category term="reading list"/>
+  </entry>
+  <entry>
+    <title>Best New Children's Books 2026</title>
+    <link href="https://guineapadre.shop/blog/best-new-childrens-books-2026.html" rel="alternate"/>
+    <id>urn:uuid:new-books-2026</id>
+    <updated>2026-04-09T00:00:00Z</updated>
+    <summary>The best new children's books of 2026 — fresh releases featuring SEL, ocean adventures, and diverse characters.</summary>
+    <category term="new releases"/><category term="2026"/>
+  </entry>
+  <entry>
+    <title>Books About Change for Kids</title>
+    <link href="https://guineapadre.shop/blog/books-about-change-for-kids.html" rel="alternate"/>
+    <id>urn:uuid:change-books</id>
+    <updated>2026-04-09T00:00:00Z</updated>
+    <summary>Children's books about change — helping kids navigate transitions, new situations, and life changes with resilience.</summary>
+    <category term="change"/><category term="resilience"/>
+  </entry>
+  <entry>
+    <title>Emotional Resilience Books for Children</title>
+    <link href="https://guineapadre.shop/blog/emotional-resilience-books-children.html" rel="alternate"/>
+    <id>urn:uuid:resilience-books</id>
+    <updated>2026-04-09T00:00:00Z</updated>
+    <summary>Build emotional resilience through stories! The best picture books that teach kids to bounce back from challenges.</summary>
+    <category term="resilience"/><category term="SEL"/>
+  </entry>
+  <entry>
+    <title>Picture Books About Gratitude for Kids</title>
+    <link href="https://guineapadre.shop/blog/picture-books-gratitude-kids.html" rel="alternate"/>
+    <id>urn:uuid:gratitude-books</id>
+    <updated>2026-04-09T00:00:00Z</updated>
+    <summary>Gratitude picture books that teach children thankfulness, appreciation, and finding joy in everyday moments.</summary>
+    <category term="gratitude"/><category term="SEL"/>
+  </entry>
+</feed>
